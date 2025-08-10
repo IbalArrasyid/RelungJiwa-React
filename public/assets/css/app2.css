@@ -1,0 +1,1061 @@
+:root {
+    --swiper-theme-color: var(--bs-primary);
+}
+
+.text-facebook {
+    color: #4267b2 !important;
+}
+
+.text-twitter {
+    color: #1da1f2 !important;
+}
+
+.text-whatsapp {
+    color: #4ac959 !important;
+}
+
+.text-line {
+    color: #00c300 !important;
+}
+
+.modal-backdrop-custom {
+    --bs-backdrop-zindex: 10;
+    --bs-backdrop-bg: #000;
+    --bs-backdrop-opacity: 0.5;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    z-index: var(--bs-backdrop-zindex);
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--bs-backdrop-bg);
+}
+
+.modal-backdrop-custom.show {
+    opacity: var(--bs-backdrop-opacity);
+    display: flex !important;
+}
+
+.comment {
+    height: 50vh;
+}
+
+
+/* progressbar */
+
+.progressbar {
+    counter-reset: step;
+}
+
+.progressbar li {
+    list-style: none;
+    display: inline-block;
+    width: 32%;
+    position: relative;
+    text-align: center;
+    color: #6b7280;
+}
+
+.progressbar li:before {
+    width: 48px;
+    height: 48px;
+    line-height: 48px;
+    border: 2px solid #6b7280;
+    display: block;
+    text-align: center;
+    margin: 0 auto 10px auto;
+    border-radius: 50%;
+    position: relative;
+    z-index: 2;
+    background-color: var(--bs-white);
+    content: counter(step);
+    counter-increment: step;
+    font-weight: 600;
+}
+
+.progressbar li:after {
+    width: 100%;
+    height: 4px;
+    content: "";
+    position: absolute;
+    background-color: #c8cdd6;
+    top: 24px;
+    left: -50%;
+    z-index: 0;
+}
+
+.progressbar li:first-child:after {
+    content: none;
+}
+
+.progressbar li.active {
+    color: var(--bs-black);
+}
+
+.progressbar li.active span {
+    color: var(--bs-primary);
+    font-weight: bold;
+}
+
+.progressbar li.active:before {
+    color: var(--bs-white);
+    border-color: var(--bs-primary);
+    background: var(--bs-primary);
+}
+
+.progressbar li.active+li:after {
+    background-color: var(--bs-primary);
+}
+
+.progressbar li.active.checked:before {
+    color: transparent;
+    background-image: url("../img/icon/check.png");
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.card-selected {
+    color: var(--bs-primary) !important;
+    background-color: #dff1f5 !important;
+    border: 1.5px solid var(--bs-primary) !important;
+}
+
+.card-selected-warning {
+    background-color: #fffaf0 !important;
+    border: 1.5px solid var(--bs-secondary) !important;
+}
+
+.card-selected-danger {
+    color: var(--bs-danger) !important;
+    background-color: #ffe6e8 !important;
+    border: 1.5px solid var(--bs-danger) !important;
+}
+
+@media (max-width: 991.98px) {
+    .progressbar li {
+        font-size: 13px;
+    }
+    .progressbar li:before {
+        width: 36px;
+        height: 36px;
+        line-height: 34px;
+    }
+    .progressbar li:after {
+        top: 18px;
+        height: 2px;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .progressbar li:after {
+        top: 16px;
+    }
+    .service-explain {
+        color: var(--bs-primary) !important;
+        background-color: #dff1f5 !important;
+        border: 1.5px solid var(--bs-primary) !important;
+    }
+}
+
+
+/* .modal.auth.register-step */
+
+.modal.auth.register-step .modal-body .progressbar {
+    margin-bottom: 48px;
+}
+
+.modal.auth.register-step .modal-body .progressbar li {
+    width: 24%;
+}
+
+@media (max-width: 991.98px) {
+    .modal.auth.register-step .modal-body {
+        width: 100% !important;
+    }
+}
+
+.swiper-pagination-bullet {
+    width: 24px;
+    height: 5px;
+    border-radius: 14px;
+}
+
+.categories {
+    gap: 16px;
+    display: flex;
+    align-items: center;
+    overflow-x: scroll;
+    padding-bottom: 16px;
+    justify-content: start;
+}
+
+.categories::-webkit-scrollbar {
+    width: 10px;
+    height: 6px;
+}
+
+.categories::-webkit-scrollbar-track {
+    border-radius: 100px;
+    background-color: var(--bs-second);
+}
+
+.categories::-webkit-scrollbar-thumb {
+    border-radius: 100px;
+    background-color: var(--bs-primary);
+}
+
+.categories .btn-primary {
+    min-width: fit-content;
+    user-select: auto !important;
+}
+
+.categories .btn-secondary {
+    min-width: fit-content;
+    user-select: auto !important;
+}
+
+.categories .btn-primary:active,
+.categories .btn-primary:focus,
+.categories .btn-primary:hover {
+    box-shadow: 0 0 6px 2px rgba(0, 59, 94, 0) !important;
+}
+
+.categories .btn-primary.unselected {
+    color: var(--bs-primary);
+    background-color: var(--bs-second);
+    border-color: var(--bs-second);
+}
+
+.categories .btn-primary.unselected:hover {
+    color: var(--white) !important;
+    background-color: var(--bs-primary) !important;
+}
+
+.categories div {
+    min-width: fit-content;
+}
+
+.no-shadow {
+    box-shadow: none;
+}
+
+
+/* btn-floating */
+
+.btn-floating {
+    width: 76px;
+    height: 76px;
+    border-radius: 100%;
+    background-color: var(--bs-white);
+    position: fixed;
+    right: 24px;
+    bottom: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid var(--bs-primary);
+    z-index: 1000;
+}
+
+.btn-floating img {
+    width: 36px;
+    height: 36px;
+}
+
+.btn-floating i {
+    color: var(--bs-primary);
+    font-size: 32px;
+}
+
+@media (max-width: 991.98px) {
+    .btn-floating {
+        width: 64px;
+        height: 64px;
+        bottom: 80px;
+        border: 2px solid var(--bs-primary);
+    }
+    .btn-floating img {
+        width: 28px;
+        height: 28px;
+    }
+    .btn-floating i {
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .btn-floating {
+        width: 48px;
+        height: 48px;
+        border: 1px solid var(--bs-primary);
+    }
+    .btn-floating i {
+        font-size: 24px;
+    }
+}
+
+.actions {
+    gap: 16px;
+    display: flex;
+    font-size: 1rem;
+    align-items: start;
+    justify-content: start;
+    flex-direction: column;
+    top: 24px;
+    position: sticky;
+}
+
+.btn.btn-xl.btn-icon-only,
+.btn-group-xl>.btn.btn-icon-only {
+    width: 4rem;
+    height: 4rem;
+    padding: 1rem 1rem;
+}
+
+.btn.btn-xl i,
+.btn-group-xl>.btn i {
+    font-size: 1.5rem;
+    position: relative;
+    top: 3px;
+}
+
+.btn-check:checked+.btn,
+:not(.btn-check)+.btn:active,
+.btn:first-child:active,
+.btn.active,
+.btn.show {
+    color: var(--bs-primary);
+    background-color: var(--bs-second);
+    border: 1.5px solid var(--bs-primary);
+}
+
+.select2 {
+    z-index: 3 !important;
+}
+
+.select2-container--default .select2-selection--multiple {
+    background-color: white;
+    border: 1px solid #d2d6da;
+    border-radius: 0.5rem;
+    cursor: text;
+    -moz-padding-start: calc(0.75rem - 3px);
+    padding: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 400;
+    line-height: 1.4rem;
+    position: relative;
+}
+
+.select2-container--default .select2-results__option[aria-selected="true"] {
+    color: white;
+    background-color: #002b46;
+}
+
+.select2-container--default .select2-selection--multiple .select2-selection__choice {
+    background-image: linear-gradient(310deg, #002b46 0%, #3497c2 100%);
+    color: white;
+    padding: 2px 0 2px 10px;
+    border: none;
+    margin-top: 0;
+}
+
+.select2-container--default .select2-selection--multiple .select2-selection__choice__remove {
+    color: white;
+    position: relative;
+    float: right;
+    border: none;
+    margin: 0 8px;
+}
+
+.select2-container--bootstrap4.select2-container--focus .select2-selection {
+    box-shadow: none;
+}
+
+.nav.nav-tab-custom {
+    background: transparent !important;
+    border-radius: 0 !important;
+}
+
+.nav.nav-tab-custom .nav-link.active {
+    border-radius: 0.75rem 0 0 0.75rem !important;
+    border-right: 4px solid #095e8f !important;
+    background-color: #dff1f5 !important;
+    background-image: none;
+    color: #000;
+}
+
+.progress-round {
+    .progress {
+        height: 4.5rem;
+        width: 4.5rem;
+        background: none;
+        position: relative;
+    }
+    .progress::after {
+        content: "";
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        border: 6px solid #eee;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    .progress-bar {
+        border-radius: 0;
+        margin: 0;
+    }
+    .progress>span {
+        width: 50%;
+        height: 100%;
+        overflow: hidden;
+        position: absolute;
+        top: 0;
+        z-index: 1;
+    }
+    .progress .progress-left {
+        left: 0;
+    }
+    .progress .progress-bar {
+        width: 100%;
+        height: 100%;
+        background: none;
+        border-width: 6px;
+        border-style: solid;
+        position: absolute;
+        top: 0;
+    }
+    .progress .progress-left .progress-bar {
+        left: 100%;
+        border-top-right-radius: 80px;
+        border-bottom-right-radius: 80px;
+        border-left: 0;
+        -webkit-transform-origin: center left;
+        transform-origin: center left;
+    }
+    .progress .progress-right {
+        right: 0;
+    }
+    .progress .progress-right .progress-bar {
+        left: -100%;
+        border-top-left-radius: 80px;
+        border-bottom-left-radius: 80px;
+        border-right: 0;
+        -webkit-transform-origin: center right;
+        transform-origin: center right;
+    }
+    .progress .progress-value {
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+}
+
+@media (max-width: 766px) {
+    .progress-round {
+        .progress {
+            height: 3.5rem;
+            width: 3.5rem;
+        }
+    }
+    .banner-slide-1 .col-lg-7 {
+        margin-top: 26rem !important;
+    }
+    .banner-slide-1 {
+        background-image: url("../img/banner/slide-1-mobile.webp");
+        min-height: 96vh !important;
+    }
+    .banner-slide-flashsale .col-lg-7 {
+        margin-top: 26rem !important;
+    }
+    .banner-slide-flashsale {
+        background-image: url("../img/banner/slide-flashsale-mobile.png");
+        min-height: 96vh !important;
+    }
+    .banner-slide-pre-marriage {
+        background-image: url("../img/banner/slide-pre-marriage-mobile.webp");
+        background-position: center;
+        background-size: cover;
+        min-height: 90vh !important;
+    }
+    .banner-slide-pre-marriage a {
+        position: absolute;
+        top: 16rem;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        max-width: fit-content;
+    }
+    .banner-slide-kartini {
+        background-image: url("../img/banner/kartini-mobile.png");
+        background-position: center;
+        background-size: cover;
+        min-height: 90vh !important;
+    }
+    .banner-slide-kartini a {
+        position: absolute;
+        top: 16rem;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        max-width: fit-content;
+    }
+    .banner-slide-kartini-package {
+        background-image: url("../img/banner/kartini-package-mobile.webp");
+        background-position: center;
+        background-size: cover;
+        min-height: 90vh !important;
+    }
+    .banner-slide-kartini-package a {
+        position: absolute;
+        top: 16rem;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        max-width: fit-content;
+    }
+    .banner-slide-kartini-flashsale {
+        background-image: url("../img/banner/kartini-flash-sale-mobile.webp");
+        background-position: center;
+        background-size: cover;
+        min-height: 90vh !important;
+    }
+    .banner-slide-kartini-flashsale a {
+        position: absolute;
+        top: 16rem;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        max-width: fit-content;
+    }
+    .banner-pulih {
+        background-image: url("../img/banner/banner-pulih-mobile.webp");
+        background-position: center;
+        background-size: cover;
+        min-height: 90vh !important;
+    }
+    .banner-pulih a {
+        position: absolute;
+        top: 16rem;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        max-width: fit-content;
+    }
+    .banner-corner-bandung {
+        background-image: url("../img/banner/corner-bandung-mobile.webp");
+        background-position: center;
+        background-size: cover;
+        min-height: 90vh !important;
+    }
+    .banner-corner-bandung a {
+        position: absolute;
+        top: 16rem;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        max-width: fit-content;
+    }
+    .banner-mhcu-silver {
+        background-image: url("../img/banner/mhcu-silver-mobile.webp");
+        background-position: center;
+        background-size: cover;
+        min-height: 90vh !important;
+    }
+    .banner-mhcu-silver a {
+        position: absolute;
+        top: 16rem;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        max-width: fit-content;
+    }
+    .banner-slide-paket-ramadhan {
+        background-image: url("../img/banner/slide-paket-ramadhan-mobile.webp");
+        background-size: contain;
+        min-height: 70vh !important;
+    }
+    .banner-slide-paket-ramadhan a {
+        position: absolute;
+        top: 16rem;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        max-width: max-content;
+    }
+    .banner-slide-2 .container {
+        min-height: 50vh !important;
+    }
+    .banner-slide-2 .col-lg-6 {
+        min-height: 50vh !important;
+    }
+    .banner-slide-2 h1 {
+        font-size: calc(1.5rem);
+    }
+    .banner-slide-2 .lead {
+        font-size: 1rem;
+    }
+    .banner-slide-2 a {
+        margin-top: auto !important;
+        margin-right: auto !important;
+        margin-left: auto !important;
+    }
+    .banner-slide-2 p {
+        font-size: calc(1.5rem);
+    }
+    .banner-slide-2 {
+        background-image: url("../img/banner/slide-2-mobile.webp");
+        background-position: center;
+        background-size: cover;
+        min-height: 90vh !important;
+    }
+    .banner-slide-3 .col-lg-8 {
+        margin-top: 26rem !important;
+    }
+    .banner-slide-3 {
+        background-image: url("../img/banner/slide-3-mobile.webp");
+        min-height: 90vh !important;
+    }
+}
+
+@media (min-width: 768px) {
+    .banner-slide-1,
+    .banner-slide-2,
+    .banner-slide-3 a {
+        margin-right: auto !important;
+    }
+    .banner-slide-1 .col-lg-7 {
+        margin-top: 18rem !important;
+    }
+    .banner-slide-1 {
+        background-size: cover;
+        background-image: url("../img/banner/slide-1-desktop.webp");
+        min-height: 90vh !important;
+    }
+    .banner-slide-2 h1 {
+        font-size: calc(2rem);
+    }
+    .banner-slide-2 .lead {
+        font-size: 1.2rem;
+    }
+    .banner-slide-2 a {
+        margin-top: auto !important;
+        margin-right: auto !important;
+        margin-left: auto !important;
+    }
+    .banner-slide-2 {
+        background-size: cover;
+        background-image: url("../img/banner/slide-2-desktop.webp");
+        min-height: 90vh !important;
+    }
+    .banner-slide-3 .col-lg-7 {
+        margin-top: 18rem !important;
+    }
+    .banner-slide-3 {
+        background-size: cover;
+        background-image: url("../img/banner/slide-3-desktop.webp");
+        min-height: 90vh !important;
+    }
+    .banner-slide-flashsale .col-lg-8 {
+        margin-top: 16rem !important;
+    }
+    .banner-slide-flashsale {
+        background-size: contain;
+        background-image: url("../img/banner/slide-flashsale-desktop.png");
+        min-height: 90vh !important;
+    }
+    .banner-slide-pre-marriage {
+        background-size: contain;
+        background-image: url("../img/banner/slide-pre-marriage-dekstop.webp");
+        min-height: 90vh !important;
+    }
+    .banner-slide-pre-marriage a {
+        position: absolute;
+        top: 8rem;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        max-width: fit-content;
+    }
+    .banner-slide-kartini {
+        background-position: center;
+        background-size: contain;
+        background-image: url("../img/banner/kartini-desktop.png");
+        min-height: 90vh !important;
+    }
+    .banner-slide-kartini a {
+        position: absolute;
+        top: 6rem;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        max-width: fit-content;
+    }
+    .banner-slide-kartini-package {
+        background-position: center;
+        background-size: contain;
+        background-image: url("../img/banner/kartini-package-desktop.webp");
+        min-height: 90vh !important;
+    }
+    .banner-slide-kartini-package a {
+        position: absolute;
+        top: 6rem;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        max-width: fit-content;
+    }
+    .banner-slide-kartini-flashsale {
+        background-position: center;
+        background-size: contain;
+        background-image: url("../img/banner/kartini-flash-sale-desktop.webp");
+        min-height: 90vh !important;
+    }
+    .banner-slide-kartini-flashsale a {
+        position: absolute;
+        top: 6rem;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        max-width: fit-content;
+    }
+    .banner-pulih {
+        background-position: center;
+        background-size: contain;
+        background-image: url("../img/banner/banner-pulih-desktop.webp");
+        min-height: 90vh !important;
+    }
+    .banner-corner-bandung {
+        background-position: center;
+        background-size: contain;
+        background-image: url("../img/banner/corner-bandung-desktop.webp");
+        min-height: 90vh !important;
+    }
+    .banner-pulih a {
+        position: absolute;
+        top: 6rem;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        max-width: fit-content;
+    }
+    .banner-corner-bandung a {
+        position: absolute;
+        top: 6rem;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        max-width: fit-content;
+    }
+    .banner-mhcu-silver {
+        background-position: center;
+        background-size: contain;
+        background-image: url("../img/banner/mhcu-silver-desktop.webp");
+        min-height: 90vh !important;
+    }
+    .banner-mhcu-silver a {
+        position: absolute;
+        top: 6rem;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        max-width: fit-content;
+    }
+    .banner-slide-paket-ramadhan {
+        background-size: contain;
+        background-image: url("../img/banner/slide-paket-ramadhan-desktop.webp");
+        min-height: 90vh !important;
+    }
+    .banner-slide-paket-ramadhan a {
+        position: absolute;
+        top: 8rem;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        max-width: fit-content;
+    }
+}
+
+@media (min-width: 1368px) {
+    .banner-slide-1,
+    .banner-slide-2,
+    .banner-slide-3 a,
+    .banner-slide-flashsale a {
+        margin-right: auto !important;
+    }
+    .banner-slide-1 .col-lg-7 {
+        margin-top: 22rem !important;
+    }
+    .banner-slide-1 {
+        background-image: url("../img/banner/slide-1-desktop.webp");
+        min-height: 90vh !important;
+    }
+    .banner-slide-2 {
+        background-image: url("../img/banner/slide-2-desktop.webp");
+        min-height: 90vh !important;
+    }
+    .banner-slide-3 .col-lg-7 {
+        margin-top: 22rem !important;
+    }
+    .banner-slide-3 {
+        background-image: url("../img/banner/slide-3-desktop.webp");
+        min-height: 90vh !important;
+    }
+    .banner-slide-flashsale .col-lg-8 {
+        margin-top: 22rem !important;
+    }
+    .banner-slide-flashsale {
+        background-image: url("../img/banner/slide-flashsale-desktop.png");
+        min-height: 90vh !important;
+    }
+    .banner-slide-paket-ramadhan {
+        background-image: url("../img/banner/slide-paket-ramadhan-desktop.webp");
+        min-height: 90vh !important;
+    }
+    .banner-slide-pre-marriage {
+        background-image: url("../img/banner/slide-pre-marriage-dekstop.webp");
+        min-height: 90vh !important;
+    }
+    .banner-slide-kartini {
+        background-position: center;
+        background-size: contain;
+        background-image: url("../img/banner/kartini-desktop.png");
+        min-height: 90vh !important;
+    }
+    .banner-slide-kartini-package {
+        background-position: center;
+        background-size: contain;
+        background-image: url("../img/banner/kartini-package-desktop.webp");
+        min-height: 90vh !important;
+    }
+    .banner-slide-kartini-flashsale {
+        background-position: center;
+        background-size: contain;
+        background-image: url("../img/banner/kartini-flash-sale-desktop.webp");
+        min-height: 90vh !important;
+    }
+    .banner-pulih {
+        background-position: center;
+        background-size: contain;
+        background-image: url("../img/banner/banner-pulih-desktop.webp");
+        min-height: 90vh !important;
+    }
+    .banner-corner-bandung {
+        background-position: center;
+        background-size: contain;
+        background-image: url("../img/banner/corner-bandung-desktop.webp");
+        min-height: 90vh !important;
+    }
+    .banner-mhcu-silver {
+        background-position: center;
+        background-size: contain;
+        background-image: url("../img/banner/mhcu-silver-desktop.webp");
+        min-height: 90vh !important;
+    }
+}
+
+.progress-bar.progress-bar-yellow {
+    background-image: linear-gradient(310deg, #ab5409 0%, #f79526 100%);
+}
+
+.carousel-indicators.indicator-blue [data-bs-target] {
+    background-color: var(--bs-blue);
+    opacity: 1;
+    border-radius: 50%;
+    width: 8px;
+    height: 8px;
+}
+
+.carousel-indicators.indicator-blue .active {
+    background-color: var(--bs-primary);
+}
+
+.card .card-badge {
+    position: absolute;
+    right: -30px;
+    top: 10px;
+    padding: 4px;
+    z-index: 100;
+    background: white;
+    color: var(--bs-primary);
+    border: 1px solid #ab5409;
+    transform: rotate(40deg);
+}
+
+.bg-10th-decoration {
+    background-size: contain;
+    background-position: top right;
+    background-repeat: no-repeat;
+    background-image: url("../img/10th-decoration.svg");
+}
+
+@media (max-width: 539.98px) {
+    .bg-10th-decoration {
+        background-position: center;
+        background-image: url("../img/10th-decoration-mobile.svg");
+    }
+}
+
+.footer .overlay-decoration {
+    position: relative;
+}
+
+.footer .overlay-decoration .decoration-lentera {
+    display: block;
+    position: absolute;
+    top: -118px;
+    left: 0;
+}
+
+.footer .overlay-decoration .decoration-ketupat {
+    display: block;
+    position: absolute;
+    top: -64px;
+    right: 80px;
+}
+
+.footer .overlay-decoration .decoration-ramadhan {
+    display: block;
+    position: absolute;
+    top: 340px;
+    left: 48px;
+}
+
+.footer .overlay-decoration .decoration-muslim {
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    top: 440px;
+}
+
+.footer .overlay-decoration .decoration-jendela {
+    display: block;
+    position: absolute;
+    top: 220px;
+    right: 36px;
+}
+
+@media (max-width: 991.98px) {
+    .footer .overlay-decoration .decoration-lentera {
+        top: -100px;
+        left: 0;
+    }
+    .footer .overlay-decoration .decoration-ketupat {
+        top: 200px;
+        right: 80px;
+    }
+    .footer .overlay-decoration .decoration-ramadhan {
+        top: 440px;
+        left: 48px;
+    }
+    .footer .overlay-decoration .decoration-muslim {
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        top: 800px;
+    }
+    .footer .overlay-decoration .decoration-jendela {
+        top: 1000px;
+        right: 36px;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .footer .overlay-decoration .decoration-lentera {
+        top: -90px;
+        left: 0;
+    }
+    .footer .overlay-decoration .decoration-ketupat {
+        top: 240px;
+        right: 80px;
+    }
+    .footer .overlay-decoration .decoration-ramadhan {
+        top: 520px;
+        left: 48px;
+    }
+    .footer .overlay-decoration .decoration-muslim {
+        display: none;
+    }
+    .footer .overlay-decoration .decoration-jendela {
+        top: 980px;
+        right: 36px;
+    }
+}
+
+@media (max-width: 539.98px) {
+    .footer .overlay-decoration .decoration-lentera {
+        top: -80px;
+        left: 0;
+    }
+    .footer .overlay-decoration .decoration-ketupat {
+        display: none;
+    }
+    .footer .overlay-decoration .decoration-ramadhan {
+        top: 640px;
+        right: 48px;
+        left: unset;
+    }
+    .footer .overlay-decoration .decoration-muslim {
+        display: block;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        top: 1240px;
+    }
+    .footer .overlay-decoration .decoration-jendela {
+        display: none;
+    }
+}
+
+
+/* kartini */
+
+.footer .overlay-decoration .decoration-leaf {
+    display: block;
+    position: absolute;
+    top: -24px;
+    left: 80px;
+}
+
+.footer .overlay-decoration .decoration-flower {
+    display: block;
+    position: absolute;
+    top: 460px;
+    left: 48px;
+}
+
+.footer .overlay-decoration .decoration-kartini {
+    display: block;
+    position: absolute;
+    top: 420px;
+    right: 100px;
+}
+
+@media (max-width: 991.98px) {
+    .footer .overlay-decoration .decoration-leaf {
+        top: -24px;
+        left: 80px;
+    }
+    .footer .overlay-decoration .decoration-flower {
+        top: 520px;
+        left: unset;
+        right: 100px;
+    }
+    .footer .overlay-decoration .decoration-kartini {
+        top: 1100px;
+        right: 280px;
+    }
+}
+
+.fs-13 {
+    font-size: 13px !important;
+}
+
+@media (max-width: 766px) {
+    .min-h-70vh {
+        min-height: 70vh !important;
+    }
+}

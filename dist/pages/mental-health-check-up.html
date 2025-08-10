@@ -1,0 +1,924 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="icon" type="image/png" href="https://www.ibunda.id/assets/img/favicon.ico">
+
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","description":"For those who helped create the Genki Dama"}</script>
+
+    <title>Ibunda.id - Konseling dengan psikolog profesional dan terpercaya</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css">
+    <link rel="stylesheet" href="https://www.ibunda.id/assets/css/custom.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+</head>
+
+<body class="mhcu-page">
+    <nav class="container">
+        <div class="bg-white shadow-sm rounded-pill py-3 px-4 my-4">
+            <div class="d-flex align-items-center justify-content-between gap-3">
+                <a href="https://www.ibunda.id/">
+                    <img class="logo" src="https://storage.googleapis.com/pendaftaran-production/logo/logo-ibunda.svg"
+                        alt="logo" class="logo">
+                </a>
+
+                <div class="d-none d-lg-flex align-items-center gap-4 fw-medium">
+                    <a href="#service" class="text-dark">Harga</a>
+                    <a href="#benefit" class="text-dark">Manfaat</a>
+                    <a href="#psychologist" class="text-dark">Psikolog</a>
+                </div>
+
+                <a href="https://api.whatsapp.com/send?phone=6281915237935&text=Halo+CS+Ibunda.id+saya+ingin+MHCU"
+                    class="btn btn-secondary rounded-pill d-none d-lg-flex" target="_blank" rel="noopener">
+                    Jadwalkan Sekarang
+                </a>
+
+                <a href="#sidemenu" class="text-dark d-lg-none d-flex align-items-center" data-bs-toggle="offcanvas"
+                    role="button" aria-controls="sidemenu">
+                    <i class="ti ti-menu-2 fs-5"></i>
+                </a>
+            </div>
+
+            <div class="offcanvas offcanvas-start" tabindex="-1" id="sidemenu">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title fs-5 text-muted">Menu Pintasan</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <div class="d-flex flex-column gap-3 fw-medium mb-4">
+                        <a href="#service" class="text-dark">Harga</a>
+                        <a href="#benefit" class="text-dark">Manfaat</a>
+                        <a href="#psychologist" class="text-dark">Psikolog</a>
+                    </div>
+
+                    <a href="https://api.whatsapp.com/send?phone=6281915237935&text=Halo+CS+Ibunda.id+saya+ingin+MHCU"
+                        class="btn btn-secondary rounded-pill" target="_blank" rel="noopener">
+                        Jadwalkan Sekarang
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="container pt-80 pb-100">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="d-flex flex-column gap-3 text-white">
+                        <h1 class="fw-bolder">Yuk, cobain layanan baru Mental Health Check Up berkala!</h1>
+                        <p class="text-broken-white fs-5">
+                            Bagaimana kabarmu hari ini? Yuk, cek kondisi mentalmu melalui asesmen dan konsultasi bersama
+                            psikolog.
+                        </p>
+                        <a href="#service" class="btn btn-secondary rounded-pill width-fit">
+                            Pelajari lebih lanjut!
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-6 text-center d-none d-lg-block">
+                    <img class="mhcu-hero" src="https://www.ibunda.id/img/mhcu.svg" alt="mhcu-illustration">
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-white top-n24" id="service">
+            <div class="container py-100 text-center">
+                <h1 class="fw-bolder text-dark mb-5">
+                    Layanan Mental Health Check Up <br class="d-none d-lg-block"> Wellme by Ibunda.id
+                </h1>
+
+                <div class="mb-4">
+                    <div class="row">
+                        <div class="col-lg-6 offset-lg-3">
+                            <ul class="nav nav-pills flex-nowrap border p-1 mx-auto" id="service-tab" role="tablist">
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link active" id="silver-tab" data-bs-toggle="pill"
+                                        data-bs-target="#silver" type="button" role="tab"
+                                        aria-controls="silver" aria-selected="true">
+                                        Silver
+                                    </button>
+                                </li>
+                                <li class="nav-item" role="presentation">
+                                    <button class="nav-link" id="gold-tab" data-bs-toggle="pill"
+                                        data-bs-target="#gold" type="button" role="tab" aria-controls="gold"
+                                        aria-selected="false">
+                                        Gold
+                                    </button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="tab-content">
+                        <div class="tab-pane fade show active" id="silver" role="tabpanel"
+                            aria-labelledby="silver-tab" tabindex="0">
+
+                            <p class="text-muted fs-5 my-4">
+                                Paket asesmen untuk mengetahui kondisi mentalmu terkait
+                                <br class="d-none d-lg-block"> dengan
+                                <span class="text-dark fw-bold">Stress dan Kecemasan</span>.
+                            </p>
+
+                            <div class="card border rounded-4 mb-4">
+                                <div class="card-body">
+                                    <div class="d-flex flex-column text-start gap-3">
+                                        <div class="bg-blue-extra-light rounded-4 p-4">
+                                            <div class="d-flex flex-column gap-2 fs-5">
+                                                <div class="d-flex align-items-center gap-2">
+                                                    <i class="ti ti-check text-insightme"></i>
+
+                                                    <span>Rangkaian asesmen online untuk mengetahui tingkat stress dan
+                                                        kecemasan</span>
+                                                </div>
+                                                <div class="d-flex align-items-center gap-2">
+                                                    <i class="ti ti-check text-insightme"></i>
+
+                                                    <span>Konsultasi berdurasi 60 menit membahas hasil asesmen</span>
+                                                </div>
+                                                <div class="d-flex align-items-center gap-2">
+                                                    <i class="ti ti-check text-insightme"></i>
+
+                                                    <span>Laporan hasil MHCU (PDF)</span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="d-flex flex-wrap flex-lg-nowrap align-items-center gap-3">
+                                            <div class="d-flex flex-column align-items-center gap-4 w-100">
+                                                <div
+                                                    class="bg-yellow-gradient w-100 rounded-4 text-center fw-bold fs-4 py-28">
+                                                    <div>Offline</div>
+                                                    <div>Rp569.000</div>
+                                                </div>
+
+                                                <a href="https://api.whatsapp.com/send?phone=6281915237935&text=Halo+CS+Ibunda.id+saya+ingin+MHCU+Silver+Offline"
+                                                    class="btn btn-secondary btn-gradient rounded-pill"
+                                                    target="_blank" rel="noopener">
+                                                    Jadwalkan Sekarang
+                                                </a>
+                                            </div>
+
+                                            <div class="d-flex flex-column align-items-center gap-4 w-100">
+                                                <div
+                                                    class="bg-blue-gradient w-100 rounded-4 text-center fw-bold fs-4 py-28">
+                                                    <div>Online</div>
+                                                    <div>Rp269.000</div>
+                                                </div>
+
+                                                <a href="https://api.whatsapp.com/send?phone=6281915237935&text=Halo+CS+Ibunda.id+saya+ingin+MHCU+Silver+Online"
+                                                    class="btn btn-primary btn-gradient rounded-pill" target="_blank"
+                                                    rel="noopener">
+                                                    Jadwalkan Sekarang
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="gold" role="tabpanel" aria-labelledby="gold-tab"
+                            tabindex="0">
+
+                            <p class="text-muted fs-5 my-4">
+                                Paket asesmen untuk mengetahui kondisi mentalmu terkait <br class="d-none d-lg-block">
+                                dengan
+                                <span class="text-dark fw-bold">tipe kepribadianmu</span>.
+                            </p>
+
+                            <div class="card border rounded-4 mb-4">
+                                <div class="card-body">
+                                    <div class="d-flex flex-column text-start gap-3">
+                                        <div class="bg-blue-extra-light rounded-4 p-4">
+                                            <div class="d-flex flex-column gap-2 fs-5">
+                                                <div class="d-flex align-items-center gap-2">
+                                                    <i class="ti ti-check text-insightme"></i>
+
+                                                    <span>Rangkaian asesmen online untuk mengetahui tipe
+                                                        kepribadian</span>
+                                                </div>
+                                                <div class="d-flex align-items-center gap-2">
+                                                    <i class="ti ti-check text-insightme"></i>
+
+                                                    <span>Konsultasi berdurasi 60 menit membahas hasil asesmen</span>
+                                                </div>
+                                                <div class="d-flex align-items-center gap-2">
+                                                    <i class="ti ti-check text-insightme"></i>
+
+                                                    <span>Laporan hasil MHCU (PDF)</span>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="d-flex flex-wrap flex-lg-nowrap align-items-center gap-3">
+                                            <div class="d-flex flex-column align-items-center gap-4 w-100">
+                                                <div
+                                                    class="bg-yellow-gradient w-100 rounded-4 text-center fw-bold fs-4 py-28">
+                                                    <div>Offline</div>
+                                                    <div>Rp669.000</div>
+                                                </div>
+
+                                                <a href="https://api.whatsapp.com/send?phone=6281915237935&text=Halo+CS+Ibunda.id+saya+ingin+MHCU+Gold+Offline"
+                                                    class="btn btn-secondary btn-gradient rounded-pill"
+                                                    target="_blank" rel="noopener">
+                                                    Jadwalkan Sekarang
+                                                </a>
+                                            </div>
+
+                                            <div class="d-flex flex-column align-items-center gap-4 w-100">
+                                                <div
+                                                    class="bg-blue-gradient w-100 rounded-4 text-center fw-bold fs-4 py-28">
+                                                    <div>Online</div>
+                                                    <div>Rp369.000</div>
+                                                </div>
+
+                                                <a href="https://api.whatsapp.com/send?phone=6281915237935&text=Halo+CS+Ibunda.id+saya+ingin+MHCU+Gold+Online"
+                                                    class="btn btn-primary btn-gradient rounded-pill" target="_blank"
+                                                    rel="noopener">
+                                                    Jadwalkan Sekarang
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-blue-extra-light pb-100 top-n124" id="benefit">
+            <div class="container">
+                <h1 class="fw-bolder text-dark mb-5 text-center">
+                    Apa manfaat Mental Health Check Up?
+                </h1>
+
+                <div class="row align-items-center">
+                    <div class="col-lg-5 text-center mb-4 mb-lg-0">
+                        <img class="mhcu-reason" src="https://www.ibunda.id/img/mhcu-reason.svg" alt="mhcu-reason">
+                    </div>
+                    <div class="col-lg-7">
+                        <div class="d-flex flex-column gap-3 fw-bold fs-5">
+                            <div class="d-flex align-items-center gap-2">
+                                <i class="ti ti-circle-check"></i>
+
+                                <span>Mendeteksi dini kondisi kesehatan mental</span>
+                            </div>
+                            <div class="d-flex align-items-center gap-2">
+                                <i class="ti ti-circle-check"></i>
+
+                                <span>Meningkatkan kesadaran diri dan kualitas hidup</span>
+                            </div>
+                            <div class="d-flex align-items-center gap-2">
+                                <i class="ti ti-circle-check"></i>
+
+                                <span>Menemukan strategi dalam menghadapi stres</span>
+                            </div>
+                            <div class="d-flex align-items-center gap-2">
+                                <i class="ti ti-circle-check"></i>
+
+                                <span>Menjaga hubungan sosial lebih sehat</span>
+                            </div>
+                            <div class="d-flex align-items-center gap-2">
+                                <i class="ti ti-circle-check"></i>
+
+                                <span>Meningkatkan produktivitas dan keseimbangan hidup</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-white">
+            <div class="container py-100">
+                <div class="card border rounded-4 bg-texture">
+                    <div class="card-body text-center py-40 px-5">
+                        <p class="text-broken-white fs-5 mb-0">
+                            Mengakui bahwa kamu sedang tidak baik-baik saja, butuh keberanian besar.
+                        </p>
+                        <div class="text-white fs-4 fw-bold mb-4">
+                            Apalagi ketika kamu mulai mencari informasi terkait Mental
+                            <br class="d-none d-lg-block">
+                            Health Check Up itu adalah langkah awal yang hebat lho!
+                        </div>
+                        <a href="https://api.whatsapp.com/send?phone=6281915237935&text=Halo+CS+Ibunda.id+saya+ingin+MHCU"
+                            class="btn btn-secondary rounded-pill" target="_blank" rel="noopener">
+                            Yuk cek kesehatan mentalmu sekarang!
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-blue-extra-light py-100" id="psychologist">
+            <div class="container">
+                <h1 class="fw-bolder text-dark text-center mb-5">
+                    Psikolog yang Melayani MHCU
+                </h1>
+
+                <div class="row mb-4">
+                    <div class="col-lg-6 offset-lg-3">
+                        <ul class="nav nav-pills flex-nowrap border p-1 mx-auto bg-white" id="psychologist-tab"
+                            role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active" id="psychologist-online-tab" data-bs-toggle="pill"
+                                    data-bs-target="#psychologist-online" type="button" role="tab"
+                                    aria-controls="psychologist-online" aria-selected="true">
+                                    Online
+                                </button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="psychologist-offline-tab" data-bs-toggle="pill"
+                                    data-bs-target="#psychologist-offline" type="button" role="tab"
+                                    aria-controls="psychologist-offline" aria-selected="false">
+                                    Offline
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="tab-content position-relative">
+                    <div class="tab-pane fade show active" id="psychologist-online" role="tabpanel"
+                        aria-labelledby="psychologist-online-tab" tabindex="0">
+
+                        <div class="swiper psychologist-online-swiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="row">
+                                        <div class="col-lg-4 mb-3">
+                                            <div class="card border-0 rounded-4 min-height-116">
+                                                <div class="card-body d-flex">
+                                                    <div class="d-flex align-items-center gap-3">
+                                                        <img class="border rounded-circle size-76"
+                                                            src="https://storage.googleapis.com/pendaftaran-production/counselor_avatar/ZE5cxlZv0TPgo7swD121Aq5FXCeNnj60Xk2NJYnj.jpg"
+                                                            alt="psychologist">
+
+                                                        <div class="d-flex flex-column gap-2">
+                                                            <div class="fw-bold text-dark">
+                                                                Ainun Fahma Yusiarida, M.Psi., Psikolog
+                                                            </div>
+
+                                                            <span
+                                                                class="badge rounded-pill py-2 px-3 text-bg-wellme width-fit">
+                                                                Psikolog Klinis Umum
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 mb-3">
+                                            <div class="card border-0 rounded-4 min-height-116">
+                                                <div class="card-body d-flex">
+                                                    <div class="d-flex align-items-center gap-3">
+                                                        <img class="border rounded-circle size-76"
+                                                            src="https://storage.googleapis.com/pendaftaran-production/counselor_avatar/lUV1RAaxE0BoithK57pet8rtZrmN7AIh1flSkL0Z.jpg"
+                                                            alt="psychologist">
+
+                                                        <div class="d-flex flex-column gap-2">
+                                                            <div class="fw-bold text-dark">
+                                                                Alice Dian Permata Sari, M.Psi., Psikolog
+                                                            </div>
+
+                                                            <span
+                                                                class="badge rounded-pill py-2 px-3 text-bg-wellme width-fit">
+                                                                Psikolog Klinis Umum
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 mb-3">
+                                            <div class="card border-0 rounded-4 min-height-116">
+                                                <div class="card-body d-flex">
+                                                    <div class="d-flex align-items-center gap-3">
+                                                        <img class="border rounded-circle size-76"
+                                                            src="https://storage.googleapis.com/pendaftaran-production/counselor_avatar/8Gfi9cDVSWqDxgEftDFCiRgfKyFy82MhTwB9BF2E.png"
+                                                            alt="psychologist">
+
+                                                        <div class="d-flex flex-column gap-2">
+                                                            <div class="fw-bold text-dark">
+                                                                Ayzha Rizvy Abigail Anggorodi, M.Psi., Psikolog
+                                                            </div>
+
+                                                            <span
+                                                                class="badge rounded-pill py-2 px-3 text-bg-wellme width-fit">
+                                                                Psikolog Klinis Dewasa
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 mb-3">
+                                            <div class="card border-0 rounded-4 min-height-116">
+                                                <div class="card-body d-flex">
+                                                    <div class="d-flex align-items-center gap-3">
+                                                        <img class="border rounded-circle size-76"
+                                                            src="https://storage.googleapis.com/pendaftaran-production/counselor_avatar/tv3fRVh2yroe2iqlQYI0lTZibkmah8dV5pMIuxmW.jpg"
+                                                            alt="psychologist">
+
+                                                        <div class="d-flex flex-column gap-2">
+                                                            <div class="fw-bold text-dark">
+                                                                Bianglala Andriadewi, M.Psi., Psikolog
+                                                            </div>
+
+                                                            <span
+                                                                class="badge rounded-pill py-2 px-3 text-bg-wellme width-fit">
+                                                                Psikolog Klinis Dewasa
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 mb-3">
+                                            <div class="card border-0 rounded-4 min-height-116">
+                                                <div class="card-body d-flex">
+                                                    <div class="d-flex align-items-center gap-3">
+                                                        <img class="border rounded-circle size-76"
+                                                            src="https://storage.googleapis.com/pendaftaran-production/counselor_avatar/GYjZTNBh2cD7gOUA4HlCDcJlhtgXiJBNMwy3w2dM.png"
+                                                            alt="psychologist">
+
+                                                        <div class="d-flex flex-column gap-2">
+                                                            <div class="fw-bold text-dark">
+                                                                Ervina Diana, M.Psi., Psikolog
+                                                            </div>
+
+                                                            <span
+                                                                class="badge rounded-pill py-2 px-3 text-bg-wellme width-fit">
+                                                                Psikolog Klinis Umum
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 mb-3">
+                                            <div class="card border-0 rounded-4 min-height-116">
+                                                <div class="card-body d-flex">
+                                                    <div class="d-flex align-items-center gap-3">
+                                                        <img class="border rounded-circle size-76"
+                                                            src="https://storage.googleapis.com/pendaftaran-production/counselor_avatar/jMDadnOfzEqN4VWU8CQ7ZVcyNMTeO4Wu9OMdqmmg.jpg"
+                                                            alt="psychologist">
+
+                                                        <div class="d-flex flex-column gap-2">
+                                                            <div class="fw-bold text-dark">
+                                                                Herdini Primasari, M. Psi., Psikolog
+                                                            </div>
+
+                                                            <span
+                                                                class="badge rounded-pill py-2 px-3 text-bg-wellme width-fit">
+                                                                Psikolog Klinis Umum
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="swiper-slide">
+                                    <div class="row">
+                                        <div class="col-lg-4 mb-3">
+                                            <div class="card border-0 rounded-4 min-height-116">
+                                                <div class="card-body d-flex">
+                                                    <div class="d-flex align-items-center gap-3">
+                                                        <img class="border rounded-circle size-76"
+                                                            src="https://storage.googleapis.com/pendaftaran-production/counselor_avatar/TDENsryWKxWVd79rxCmBnPqW4pCfQRFoU0a90wo2.png"
+                                                            alt="psychologist">
+
+                                                        <div class="d-flex flex-column gap-2">
+                                                            <div class="fw-bold text-dark">
+                                                                Husna Faizah, M.Psi., Psikolog
+                                                            </div>
+
+                                                            <span
+                                                                class="badge rounded-pill py-2 px-3 text-bg-wellme width-fit">
+                                                                Psikolog Klinis Umum
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 mb-3">
+                                            <div class="card border-0 rounded-4 min-height-116">
+                                                <div class="card-body d-flex">
+                                                    <div class="d-flex align-items-center gap-3">
+                                                        <img class="border rounded-circle size-76"
+                                                            src="https://storage.googleapis.com/pendaftaran-production/counselor_avatar/bstOtcU8pgrpI0UoVbmufNgK5LI0XuwpmDMceeVv.jpg"
+                                                            alt="psychologist">
+
+                                                        <div class="d-flex flex-column gap-2">
+                                                            <div class="fw-bold text-dark">
+                                                                Ida Ayu Saraswati Indraharsani, M.Psi., Psikolog
+                                                            </div>
+
+                                                            <span
+                                                                class="badge rounded-pill py-2 px-3 text-bg-wellme width-fit">
+                                                                Psikolog Klinis Umum
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 mb-3">
+                                            <div class="card border-0 rounded-4 min-height-116">
+                                                <div class="card-body d-flex">
+                                                    <div class="d-flex align-items-center gap-3">
+                                                        <img class="border rounded-circle size-76"
+                                                            src="https://storage.googleapis.com/pendaftaran-production/counselor_avatar/Smpzg2WXM0SH38LcNmMFzPS57eCZaDHc2iB2Mz6c.jpg"
+                                                            alt="psychologist">
+
+                                                        <div class="d-flex flex-column gap-2">
+                                                            <div class="fw-bold text-dark">
+                                                                Issara Rizkya, M.Psi., Psikolog
+                                                            </div>
+
+                                                            <span
+                                                                class="badge rounded-pill py-2 px-3 text-bg-wellme width-fit">
+                                                                Psikolog Klinis Dewasa
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 mb-3">
+                                            <div class="card border-0 rounded-4 min-height-116">
+                                                <div class="card-body d-flex">
+                                                    <div class="d-flex align-items-center gap-3">
+                                                        <img class="border rounded-circle size-76"
+                                                            src="https://storage.googleapis.com/pendaftaran-production/counselor_avatar/9ThqRZFmzOnposVl4thpH87vgiBOCXwJvgXYS2xG.jpg"
+                                                            alt="psychologist">
+
+                                                        <div class="d-flex flex-column gap-2">
+                                                            <div class="fw-bold text-dark">
+                                                                Jiwika Mira Joice Hutajulu, M.Psi., Psikolog
+                                                            </div>
+
+                                                            <span
+                                                                class="badge rounded-pill py-2 px-3 text-bg-wellme width-fit">
+                                                                Psikolog Klinis Dewasa
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 mb-3">
+                                            <div class="card border-0 rounded-4 min-height-116">
+                                                <div class="card-body d-flex">
+                                                    <div class="d-flex align-items-center gap-3">
+                                                        <img class="border rounded-circle size-76"
+                                                            src="https://storage.googleapis.com/pendaftaran-production/counselor_avatar/AaIAzPlIq9lKnXgl6c7os2P6Xcf8uEPUOwIFfVe5.png"
+                                                            alt="psychologist">
+
+                                                        <div class="d-flex flex-column gap-2">
+                                                            <div class="fw-bold text-dark">
+                                                                Karina Devany, M.Psi., Psikolog
+                                                            </div>
+
+                                                            <span
+                                                                class="badge rounded-pill py-2 px-3 text-bg-wellme width-fit">
+                                                                Psikolog Klinis Dewasa
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 mb-3">
+                                            <div class="card border-0 rounded-4 min-height-116">
+                                                <div class="card-body d-flex">
+                                                    <div class="d-flex align-items-center gap-3">
+                                                        <img class="border rounded-circle size-76"
+                                                            src="https://storage.googleapis.com/pendaftaran-production/counselor_avatar/8v6l4QCaF2VSZMSMAZwJSJCqv8hBfro1Jr76gx8j.png"
+                                                            alt="psychologist">
+
+                                                        <div class="d-flex flex-column gap-2">
+                                                            <div class="fw-bold text-dark">
+                                                                Olga Sancaya Dyah Permatasari, M.Psi. Psikolog
+                                                            </div>
+
+                                                            <span
+                                                                class="badge rounded-pill py-2 px-3 text-bg-wellme width-fit">
+                                                                Psikolog Klinis Dewasa
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="swiper-slide">
+                                    <div class="row">
+                                        <div class="col-lg-4 mb-3">
+                                            <div class="card border-0 rounded-4 min-height-116">
+                                                <div class="card-body d-flex">
+                                                    <div class="d-flex align-items-center gap-3">
+                                                        <img class="border rounded-circle size-76"
+                                                            src="https://storage.googleapis.com/pendaftaran-production/counselor_avatar/pU8R8E3PunFzDivdSjoqTz00cdo46lJih3AGCBoZ.jpg"
+                                                            alt="psychologist">
+
+                                                        <div class="d-flex flex-column gap-2">
+                                                            <div class="fw-bold text-dark">
+                                                                Shinta Adella, M.Psi., Psikolog
+                                                            </div>
+
+                                                            <span
+                                                                class="badge rounded-pill py-2 px-3 text-bg-wellme width-fit">
+                                                                Psikolog Klinis Umum
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 mb-3">
+                                            <div class="card border-0 rounded-4 min-height-116">
+                                                <div class="card-body d-flex">
+                                                    <div class="d-flex align-items-center gap-3">
+                                                        <img class="border rounded-circle size-76"
+                                                            src="https://storage.googleapis.com/pendaftaran-production/counselor_avatar/o0jH44E3ccvRKYF2JZGRn2ByKqJBbJ2Vqy1TbTvU.png"
+                                                            alt="psychologist">
+
+                                                        <div class="d-flex flex-column gap-2">
+                                                            <div class="fw-bold text-dark">
+                                                                Titut Esti Koeswardani, M.Psi., Psikolog
+                                                            </div>
+
+                                                            <span
+                                                                class="badge rounded-pill py-2 px-3 text-bg-wellme width-fit">
+                                                                Psikolog Klinis Umum
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="swiper-pagination position-relative"></div>
+                        </div>
+
+                        <div
+                            class="swiper-navigation-prev bg-muted width-fit rounded-circle size-40 d-flex align-items-center justify-content-center">
+                            <i class="ti ti-chevron-left text-white"></i>
+                        </div>
+
+                        <div
+                            class="swiper-navigation-next bg-muted width-fit rounded-circle size-40 d-flex align-items-center justify-content-center">
+                            <i class="ti ti-chevron-right text-white"></i>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="psychologist-offline" role="tabpanel"
+                        aria-labelledby="psychologist-offline-tab" tabindex="0">
+
+                        <div class="swiper psychologist-offline-swiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="row">
+                                        <div class="col-lg-4 mb-3">
+                                            <div class="card border-0 rounded-4 min-height-116">
+                                                <div class="card-body d-flex">
+                                                    <div class="d-flex align-items-center gap-3">
+                                                        <img class="border rounded-circle size-76"
+                                                            src="https://storage.googleapis.com/pendaftaran-production/counselor_avatar/TDENsryWKxWVd79rxCmBnPqW4pCfQRFoU0a90wo2.png"
+                                                            alt="psychologist">
+
+                                                        <div class="d-flex flex-column gap-2">
+                                                            <span
+                                                                class="badge rounded-pill py-2 px-3 bg-danger width-fit fs-14 d-flex gap-2">
+                                                                <i class="ti ti-map-pin-filled"></i>
+
+                                                                Jakarta Selatan
+                                                            </span>
+
+                                                            <div class="fw-bold text-dark">
+                                                                Husna Faizah, M.Psi., Psikolog
+                                                            </div>
+
+                                                            <span
+                                                                class="badge rounded-pill py-2 px-3 text-bg-wellme width-fit">
+                                                                Psikolog Klinis Umum
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 mb-3">
+                                            <div class="card border-0 rounded-4 min-height-116">
+                                                <div class="card-body d-flex">
+                                                    <div class="d-flex align-items-center gap-3">
+                                                        <img class="border rounded-circle size-76"
+                                                            src="https://storage.googleapis.com/pendaftaran-production/counselor_avatar/Smpzg2WXM0SH38LcNmMFzPS57eCZaDHc2iB2Mz6c.jpg"
+                                                            alt="psychologist">
+
+                                                        <div class="d-flex flex-column gap-2">
+                                                            <span
+                                                                class="badge rounded-pill py-2 px-3 bg-danger width-fit fs-14 d-flex gap-2">
+                                                                <i class="ti ti-map-pin-filled"></i>
+
+                                                                Bandung
+                                                            </span>
+
+                                                            <div class="fw-bold text-dark">
+                                                                Issara Rizkya, M.Psi., Psikolog
+                                                            </div>
+
+                                                            <span
+                                                                class="badge rounded-pill py-2 px-3 text-bg-wellme width-fit">
+                                                                Psikolog Klinis Dewasa
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-4 mb-3">
+                                            <div class="card border-0 rounded-4 min-height-116">
+                                                <div class="card-body d-flex">
+                                                    <div class="d-flex align-items-center gap-3">
+                                                        <img class="border rounded-circle size-76"
+                                                            src="https://storage.googleapis.com/pendaftaran-production/counselor_avatar/9ThqRZFmzOnposVl4thpH87vgiBOCXwJvgXYS2xG.jpg"
+                                                            alt="psychologist">
+
+                                                        <div class="d-flex flex-column gap-2">
+                                                            <span
+                                                                class="badge rounded-pill py-2 px-3 bg-danger width-fit fs-14 d-flex gap-2">
+                                                                <i class="ti ti-map-pin-filled"></i>
+
+                                                                Jakarta Selatan
+                                                            </span>
+
+                                                            <div class="fw-bold text-dark">
+                                                                Jiwika Mira Joice Hutajulu, M.Psi., Psikolog
+                                                            </div>
+
+                                                            <span
+                                                                class="badge rounded-pill py-2 px-3 text-bg-wellme width-fit">
+                                                                Psikolog Klinis Dewasa
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="swiper-pagination position-relative"></div>
+                        </div>
+
+                        <div
+                            class="swiper-navigation-prev bg-muted width-fit rounded-circle size-40 d-flex align-items-center justify-content-center">
+                            <i class="ti ti-chevron-left text-white"></i>
+                        </div>
+
+                        <div
+                            class="swiper-navigation-next bg-muted width-fit rounded-circle size-40 d-flex align-items-center justify-content-center">
+                            <i class="ti ti-chevron-right text-white"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="bg-white">
+            <div class="container pb-3 py-5">
+                <div class="d-flex align-items-center justify-content-between gap-3">
+                    <div class="fw-medium">Copyright © 2025 Relungjiwa</div>
+
+                    <div class="d-flex align-items-center gap-2">
+                        <a href="https://www.youtube.com/channel/UCoF5kaKbVs0aGi0HM8kPvhg" class="text-dark fs-5"
+                            target="_blank" rel="noopener">
+                            <i class="ti ti-brand-youtube"></i>
+                        </a>
+                        <a href="https://www.instagram.com/ibunda.id/" class="text-dark fs-5" target="_blank"
+                            rel="noopener">
+                            <i class="ti ti-brand-instagram"></i>
+                        </a>
+                        <a href="https://www.facebook.com/ibunda.id" class="text-dark fs-5" target="_blank"
+                            rel="noopener">
+                            <i class="ti ti-brand-facebook"></i>
+                        </a>
+                        <a href="http://line.me/ti/p/@qry4558l" class="text-dark fs-5" target="_blank"
+                            rel="noopener">
+                            <i class="ti ti-brand-line"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"
+        integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script>
+        var swiperPsychologistOnlineLength = $('.psychologist-online-swiper .swiper-slide').length
+        var swiperPsychologistOfflineLength = $('.psychologist-offline-swiper .swiper-slide').length
+
+        if (swiperPsychologistOnlineLength < 2) {
+            $('#psychologist-online .swiper-navigation-prev').addClass('d-none')
+            $('#psychologist-online .swiper-navigation-next').addClass('d-none')
+        }
+
+        if (swiperPsychologistOfflineLength < 2) {
+            $('#psychologist-offline .swiper-navigation-prev').addClass('d-none')
+            $('#psychologist-offline .swiper-navigation-next').addClass('d-none')
+        }
+
+        var swiperPsychologistOnline = new Swiper('.psychologist-online-swiper', {
+            autoplay: true,
+            loop: true,
+            keyboard: true,
+            grabCursor: true,
+            mousewheel: true,
+            pagination: {
+                el: '.psychologist-online-swiper .swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                prevEl: '#psychologist-online .swiper-navigation-prev',
+                nextEl: '#psychologist-online .swiper-navigation-next',
+            },
+            breakpoints: {
+                640: {
+                    slidesPerView: 1,
+                    spaceBetween: 16,
+                },
+                768: {
+                    slidesPerView: 1,
+                    spaceBetween: 24,
+                },
+                1024: {
+                    slidesPerView: 1,
+                    spaceBetween: 24,
+                },
+            }
+        });
+
+        var swiperPsychologistOffline = new Swiper('.psychologist-offline-swiper', {
+            autoplay: true,
+            loop: true,
+            keyboard: true,
+            grabCursor: true,
+            mousewheel: true,
+            pagination: {
+                el: '.psychologist-offline-swiper .swiper-pagination',
+                clickable: true,
+            },
+            navigation: {
+                prevEl: '#psychologist-offline .swiper-navigation-prev',
+                nextEl: '#psychologist-offline .swiper-navigation-next',
+            },
+            breakpoints: {
+                640: {
+                    slidesPerView: 1,
+                    spaceBetween: 16,
+                },
+                768: {
+                    slidesPerView: 1,
+                    spaceBetween: 24,
+                },
+                1024: {
+                    slidesPerView: 1,
+                    spaceBetween: 24,
+                },
+            }
+        });
+    </script>
+</body>
+
+</html>
