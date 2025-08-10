@@ -8,7 +8,7 @@ const slides = [
   {
     heading: 'Pulihkan kendali diri',
     text: 'Bangun rasa aman baru dan kembali tenang menghadapi keseharian.',
-    image: '/assets/img/banner/slide-1-desktop.webp'
+    image: '/assets/img/uwak1.png'
   },
   {
     heading: 'Tidur lebih berkualitas',
