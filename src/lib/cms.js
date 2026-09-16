@@ -1,3 +1,4 @@
+import { approvedHeaderFallback } from '../data/headerFallback'
 import { approvedFooterFallback } from '../data/footerFallback'
 import { approvedSiteSettingsFallback } from '../data/siteSettingsFallback'
 
@@ -343,12 +344,15 @@ export function fetchSiteSettings() {
     const request = fetchCMSJSON('/api/globals/site-settings')
       .then((settings) => normalizeSiteSettings(settings))
       .catch((error) => {
-        siteSettingsRequest = null
         if (import.meta.env.DEV) {
           console.warn('Unable to load CMS SiteSettings; using approved static fallback.', error)
         }
         return siteSettingsFallback
       })
+    siteSettingsRequest = request
+    request.finally(() => {
+      if (siteSettingsRequest === request) siteSettingsRequest = null
+    })
   }
 
   return siteSettingsRequest
@@ -408,4 +412,55 @@ export function fetchFooter() {
   }
 
   return footerRequest
+}
+const applicationPaths = new Set(['/', '/tentang', '/layanan', '/paket', '/program', '/faq', '/kontak'])
+
+function normalizeHeaderLink(link, label, id) {
+  const normalizedLabel = configuredText(label)
+  if (!normalizedLabel) return null
+
+  if (link?.type === 'internal') {
+    if (!applicationPaths.has(link.path)) return null
+    return { id: id || normalizedLabel, label: normalizedLabel, type: 'internal', href: link.path, openInNewTab: false }
+  }
+
+  if (link?.type !== 'external') return null
+  const href = normalizeExternalURL(link.url)
+  return href ? { id: id || normalizedLabel, label: normalizedLabel, type: 'external', href, openInNewTab: link.openInNewTab === true } : null
+}
+
+function normalizeHeader(header) {
+  const navigationItems = Array.isArray(header?.navigationItems)
+    ? header.navigationItems.map((item) => normalizeHeaderLink(item?.link, item?.label, item?.id)).filter(Boolean)
+    : []
+  const primaryCTA = normalizeHeaderLink(header?.primaryCTA, header?.primaryCTA?.label)
+
+  return {
+    navigationItems: navigationItems.length ? navigationItems : headerFallback.navigationItems,
+    primaryCTA,
+  }
+}
+
+export const headerFallback = {
+  navigationItems: approvedHeaderFallback.navigationItems,
+  primaryCTA: approvedHeaderFallback.primaryCTA,
+}
+
+let headerRequest
+
+export function fetchHeader() {
+  if (!headerRequest) {
+    const request = fetchCMSJSON('/api/globals/header')
+      .then((header) => normalizeHeader(header))
+      .catch((error) => {
+        if (import.meta.env.DEV) console.warn('Unable to load CMS Header; using approved static fallback.', error)
+        return headerFallback
+      })
+    headerRequest = request
+    request.finally(() => {
+      if (headerRequest === request) headerRequest = null
+    })
+  }
+
+  return headerRequest
 }
