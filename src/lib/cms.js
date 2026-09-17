@@ -1,3 +1,4 @@
+import { approvedHomepageFallback } from '../data/homepageFallback'
 import { approvedHeaderFallback } from '../data/headerFallback'
 import { approvedFooterFallback } from '../data/footerFallback'
 import { approvedSiteSettingsFallback } from '../data/siteSettingsFallback'
@@ -31,7 +32,7 @@ export function resolveCMSMediaURL(media) {
 }
 
 async function fetchCMSJSON(path, { signal } = {}) {
-  const response = await fetch(buildCMSURL(path), { signal })
+  const response = await fetch(buildCMSURL(path), { signal, cache: 'no-store' })
 
   if (!response.ok) {
     throw new Error(`CMS request failed with status ${response.status}.`)
@@ -435,9 +436,17 @@ function normalizeHeader(header) {
     : []
   const primaryCTA = normalizeHeaderLink(header?.primaryCTA, header?.primaryCTA?.label)
 
+  const useFallbackNavigation = navigationItems.length === 0
+  const useFallbackCTA = !primaryCTA
+
+  if (import.meta.env.DEV) {
+    if (useFallbackNavigation) console.info('[CMS] Header: using fallback because CMS navigation is empty or invalid.')
+    if (useFallbackCTA) console.info('[CMS] Header: using fallback CTA because CMS CTA is incomplete.')
+  }
+
   return {
-    navigationItems: navigationItems.length ? navigationItems : headerFallback.navigationItems,
-    primaryCTA,
+    navigationItems: useFallbackNavigation ? headerFallback.navigationItems : navigationItems,
+    primaryCTA: primaryCTA || headerFallback.primaryCTA,
   }
 }
 
@@ -463,4 +472,41 @@ export function fetchHeader() {
   }
 
   return headerRequest
+}
+function homepageText(value, fallback) { return configuredText(value) || fallback }
+
+function homepageItems(items, fallback, max, mapper) {
+  if (!Array.isArray(items)) return fallback.slice(0, max)
+  return fallback.slice(0, max).map((base, index) => mapper(items[index], base)).filter(Boolean)
+}
+
+function normalizeHomepage(homepage) {
+  const fallback = approvedHomepageFallback
+  const heroCTA = normalizeCTA(homepage?.primaryCTA) || fallback.hero.primaryCTA
+  const finalCTA = normalizeCTA(homepage?.finalCTAPrimary) || fallback.finalCTA.primaryCTA
+  return {
+    hero: { ...fallback.hero, eyebrow: homepageText(homepage?.eyebrow, fallback.hero.eyebrow), heading: homepageText(homepage?.heading, fallback.hero.heading), highlightedText: homepageText(homepage?.highlightedText, fallback.hero.highlightedText), description: homepageText(homepage?.description, fallback.hero.description), primaryCTA: heroCTA, image: resolveCMSMediaURL(homepage?.image) || fallback.hero.image, imageAlt: homepageText(homepage?.imageAltOverride || homepage?.image?.alt, fallback.hero.imageAlt) },
+    recognition: { ...fallback.recognition, eyebrow: homepageText(homepage?.recognitionEyebrow, fallback.recognition.eyebrow), heading: homepageText(homepage?.recognitionHeading, fallback.recognition.heading), intro: homepageText(homepage?.recognitionIntro, fallback.recognition.intro), items: homepageItems(homepage?.recognitionItems, fallback.recognition.items, 4, (item, base) => homepageText(item?.title, base)) },
+    insight: { ...fallback.insight, heading: homepageText(homepage?.insightHeading, fallback.insight.heading), description: homepageText(homepage?.insightDescription, fallback.insight.description) },
+    impact: { ...fallback.impact, heading: homepageText(homepage?.impactHeading, fallback.impact.heading), intro: configuredText(homepage?.impactIntro) || fallback.impact.intro, items: homepageItems(homepage?.impactItems, fallback.impact.items, 3, (item, base) => [homepageText(item?.title, base[0]), homepageText(item?.description, base[1])]) },
+    coach: { ...fallback.coach, eyebrow: homepageText(homepage?.coachEyebrow, fallback.coach.eyebrow), heading: homepageText(homepage?.coachHeading, fallback.coach.heading), title: homepageText(homepage?.coachTitle, fallback.coach.title), description: homepageText(homepage?.coachDescription, fallback.coach.description), image: resolveCMSMediaURL(homepage?.coachImage) || fallback.coach.image, imageAlt: homepageText(homepage?.coachImage?.alt, fallback.coach.imageAlt) },
+    outcomes: { ...fallback.outcomes, heading: homepageText(homepage?.outcomesHeading, fallback.outcomes.heading), items: homepageItems(homepage?.outcomeItems, fallback.outcomes.items, 5, (item, base) => homepageText(item?.title, base)) },
+    finalCTA: { ...fallback.finalCTA, eyebrow: homepageText(homepage?.finalCTAEyebrow, fallback.finalCTA.eyebrow), heading: homepageText(homepage?.finalCTAHeading, fallback.finalCTA.heading), description: homepageText(homepage?.finalCTADescription, fallback.finalCTA.description), primaryCTA: finalCTA },
+  }
+}
+
+export const homepageFallback = normalizeHomepage({})
+
+let homepageRequest
+
+export function fetchHomepage() {
+  if (!homepageRequest) {
+    const request = fetchCMSJSON('/api/globals/homepage').then(normalizeHomepage).catch((error) => {
+      if (import.meta.env.DEV) console.warn('Unable to load CMS Homepage; using approved static fallback.', error)
+      return homepageFallback
+    })
+    homepageRequest = request
+    request.finally(() => { if (homepageRequest === request) homepageRequest = null })
+  }
+  return homepageRequest
 }

@@ -7,6 +7,7 @@ import Home from './pages/Home'
 import About from './pages/About'
 import Services from './pages/Services'
 import Packages from './pages/Packages'
+import Programs from './pages/Programs'
 import Contact from './pages/Contact'
 import FAQ from './pages/FAQ'
 import PagesIndex from './pages/PagesIndex'
@@ -21,6 +22,7 @@ const router = createBrowserRouter([
       { path: 'tentang', element: <About /> },
       { path: 'layanan', element: <Services /> },
       { path: 'paket', element: <Packages /> },
+      { path: 'program', element: <Programs /> },
       { path: 'faq', element: <FAQ /> },
       { path: 'kontak', element: <Contact /> },
       { path: 'pages', element: <PagesIndex /> },

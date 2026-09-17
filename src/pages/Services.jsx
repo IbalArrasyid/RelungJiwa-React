@@ -1,30 +1,67 @@
+import { Activity, Brain, CircleHelp, HeartPulse, Moon, Sparkles, Target } from 'lucide-react'
+import { Link } from 'react-router-dom'
+
+import { useServices } from '../hooks/useServices'
+
+const icons = {
+  activity: Activity,
+  brain: Brain,
+  heart: HeartPulse,
+  moon: Moon,
+  sparkles: Sparkles,
+  target: Target,
+}
+
+function ServiceCTA({ cta }) {
+  if (!cta) {
+    return null
+  }
+
+  const className = 'mt-4 inline-flex break-words text-sm font-medium text-brand-700 hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500'
+
+  if (cta.type === 'internal') {
+    return <Link to={cta.path} className={className}>{cta.label}</Link>
+  }
+
+  return (
+    <a
+      href={cta.url}
+      className={className}
+      target={cta.openInNewTab ? '_blank' : undefined}
+      rel={cta.openInNewTab ? 'noreferrer' : undefined}
+    >
+      {cta.label}
+    </a>
+  )
+}
+
+function ServiceCard({ service }) {
+  const Icon = service.iconKey ? icons[service.iconKey.toLowerCase()] || CircleHelp : null
+
+  return (
+    <div className="card">
+      <div className="card-body">
+        {service.image ? (
+          <img
+            src={service.image}
+            alt={service.imageAlt}
+            className="mb-4 aspect-video w-full rounded-xl object-cover"
+          />
+        ) : null}
+        <div className="flex items-center gap-2">
+          {Icon ? <Icon className="shrink-0 text-brand-700" size={20} aria-hidden="true" /> : null}
+          <p className="min-w-0 break-all font-semibold text-slate-900">{service.title}</p>
+        </div>
+        <p className="mt-1 break-words text-sm text-slate-600">{service.shortDescription}</p>
+        {service.description ? <p className="mt-3 break-words text-sm leading-6 text-slate-600">{service.description}</p> : null}
+        <ServiceCTA cta={service.cta} />
+      </div>
+    </div>
+  )
+}
+
 export default function Services() {
-  const services = [
-    {
-      title: 'Hipnoterapi Kecemasan',
-      desc: 'Menenangkan respon fisik dan kognitif berlebih, membangun rasa aman baru.',
-    },
-    {
-      title: 'Hipnoterapi Insomnia',
-      desc: 'Mencetak ulang kebiasaan tidur dengan relaksasi terarah dan sleep hygiene.',
-    },
-    {
-      title: 'Manajemen Stres',
-      desc: 'Teknik regulasi emosi, fokus, dan penguatan coping harian.',
-    },
-    {
-      title: 'Kebiasaan & Perilaku',
-      desc: 'Merokok, makan berlebih, menunda; ubah pola pikir dan perilaku bertahap.',
-    },
-    {
-      title: 'Pemulihan Emosi & Trauma Ringan–Sedang',
-      desc: 'Memproses peristiwa yang membekas dengan aman dan penuh kendali.',
-    },
-    {
-      title: 'Peningkatan Performa',
-      desc: 'Fokus, public speaking, dan kesiapan kompetisi dengan visualisasi mental.',
-    },
-  ]
+  const services = useServices()
 
   return (
     <section className="section">
@@ -35,18 +72,23 @@ export default function Services() {
           disesuaikan dengan tujuan personal, dan kami memberi latihan yang mudah diterapkan sehari-hari.
         </p>
         <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {services.map((s) => (
-            <div key={s.title} className="card">
-              <div className="card-body">
-                <p className="font-semibold text-slate-900">{s.title}</p>
-                <p className="mt-1 text-sm text-slate-600">{s.desc}</p>
+          {services === null ? (
+            Array.from({ length: 6 }, (_, index) => (
+              <div key={index} className="card animate-pulse" aria-hidden="true">
+                <div className="card-body space-y-3">
+                  <div className="h-5 w-3/5 rounded bg-slate-200" />
+                  <div className="h-4 w-full rounded bg-slate-100" />
+                  <div className="h-4 w-4/5 rounded bg-slate-100" />
+                </div>
               </div>
-            </div>
-          ))}
+            ))
+          ) : services.length === 0 ? (
+            <p className="text-sm text-slate-600">Belum ada layanan yang tersedia.</p>
+          ) : (
+            services.map((service) => <ServiceCard key={service.id} service={service} />)
+          )}
         </div>
       </div>
     </section>
   )
 }
-
-
