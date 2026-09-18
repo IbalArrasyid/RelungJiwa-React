@@ -1,4 +1,7 @@
 import { Outlet } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
-export default function App(){return <div className="min-h-screen bg-cream text-espresso"><Navbar/><main><Outlet/></main><Footer/></div>}
+
+export default function App() {
+  return <div className="min-h-screen bg-surface text-espresso"><Navbar /><main><Outlet /></main><Footer /></div>
+}

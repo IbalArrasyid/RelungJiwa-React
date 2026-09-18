@@ -25,7 +25,7 @@ export default function StaticPage() {
     return (
       <section className="section">
         <div className="container-max">
-          <p className="text-slate-600">Halaman tidak ditemukan.</p>
+          <p className="text-espresso/65">Halaman tidak ditemukan.</p>
         </div>
       </section>
     )
@@ -33,15 +33,15 @@ export default function StaticPage() {
 
   return (
     <section className="section">
-      <div className="container-max card">
-        <div className="card-body">
-          {!entry && <p className="text-slate-600">Memuat...</p>}
+      <div className="container-max editorial-card p-3 sm:p-5">
+        <div>
+          {!entry && <p className="text-espresso/65">Memuat...</p>}
           {entry && (
             <div className="w-full aspect-[4/3]">
               <iframe
                 title={entry.title}
                 src={`/pages/${entry.file}`}
-                className="w-full h-[70vh] rounded-xl border border-slate-200"
+                className="w-full h-[70vh] rounded-lg border border-cocoa/15"
               />
             </div>
           )}

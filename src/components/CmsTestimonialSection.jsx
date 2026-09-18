@@ -29,28 +29,28 @@ export default function CmsTestimonialSection() {
   }
 
   return (
-    <section className="section bg-soft-blush">
+    <section className="section bg-surface">
       <div className="container-max">
-        <Reveal className="max-w-2xl">
+        <Reveal className="max-w-2xl text-center mx-auto">
           <p className="eyebrow">Suara dari ruang ini</p>
           <h2 className="section-title mt-4">Kesan yang dibawa pulang peserta</h2>
         </Reveal>
-        <div className="mt-10 grid gap-5 lg:grid-cols-3" aria-busy={testimonials === null}>
+        <div className="mt-12 grid gap-6 lg:grid-cols-3" aria-busy={testimonials === null}>
           {testimonials === null
             ? loadingCards.map((card) => (
-                <div key={card} className="min-h-[208px] bg-white/70 animate-pulse" aria-hidden="true" />
+                <div key={card} className="min-h-[208px] rounded-xl bg-surface-container animate-pulse" aria-hidden="true" />
               ))
             : testimonials.map((testimonial, index) => (
                 <Reveal
                   key={testimonial.id}
                   delay={index * 0.08}
-                  className="bg-white p-7 shadow-[0_12px_30px_rgba(41,35,33,.07)]"
+                  className="editorial-card flex min-h-[280px] flex-col p-7"
                 >
-                  <Quote className="text-coral" size={28} />
+                  <Quote className="text-cocoa" size={28} />
                   <blockquote className="mt-6 font-serif text-xl leading-relaxed text-espresso">
                     {testimonial.quote}
                   </blockquote>
-                  <p className="mt-7 text-sm font-medium text-cocoa">— {testimonial.context}</p>
+                  <p className="mt-auto pt-7 text-sm font-medium text-cocoa">— {testimonial.context}</p>
                 </Reveal>
               ))}
         </div>

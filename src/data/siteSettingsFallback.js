@@ -5,10 +5,11 @@ export const approvedSiteSettingsFallback = {
   whatsappDefaultMessage: null,
   email: 'uwak@relungjiwa.com',
   phone: null,
-  address: 'Jakarta (by appointment)\nOnline via Zoom/Meet',
+  address: 'Jl. Tebet Barat Dalam VIK No.13, RT.5/RW.4, Tebet Bar., Kec. Tebet, Jakarta, Daerah Khusus Ibukota Jakarta 12810',
   businessHours: null,
   instagram: null,
   youtube: null,
   tiktok: null,
   linkedin: null,
 }
+

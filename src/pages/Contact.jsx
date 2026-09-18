@@ -1,54 +1,33 @@
+import { useState } from 'react'
+import { CalendarDays, CheckCircle2, Clock3, LockKeyhole, MapPin, MessageCircle, Send, ShieldCheck, Video } from 'lucide-react'
+import { Link } from 'react-router-dom'
 import { useSiteSettings } from '../hooks/useSiteSettings'
+
+const pathways = [
+  ['01 • KANAL CEPAT', 'WhatsApp Suaka', 'Untuk pertanyaan spontan seputar jadwal, rekomendasi fasilitator, atau sekadar memastikan kecocokan awal sebelum reservasi.', 'Balasan: 2–4 jam (09.00–18.00 WIB)', MessageCircle],
+  ['02 • PENJAJAKAN DARING', 'Konsultasi Orientasi', 'Sesi 15 menit via Zoom audio/video untuk saling mengenal ritme, mendengarkan kebutuhanmu, dan memilih bentuk sesi yang paling tepat.', 'Tersedia Slot Hari Kerja & Akhir Pekan', Video],
+  ['03 • TATAP MUKA', 'Studio Hening Jakarta', 'Kunjungan privat ke suaka fisik untuk pendampingan langsung, meditasi terbimbing, atau sesi hening mandiri.', 'Tebet Barat, Jakarta Selatan', MapPin],
+]
+const quickFaq = [
+  ['Berapa lama pesan saya akan dibalas?', 'Pesan melalui formulir surel maupun WhatsApp akan direspons secara langsung oleh tim fasilitator kami dalam 2 hingga 4 jam selama jam operasional (09.00 – 18.00 WIB). Pesan yang masuk di malam hari akan disambut pertama kali keesokan paginya.'],
+  ['Bolehkah saya menghubungi tanpa nama asli?', 'Tentu saja. Anda sepenuhnya berhak menggunakan nama panggilan, nama pena, atau inisial satu huruf. Rasa aman psikologis dan kenyamanan Anda adalah syarat mutlak dalam seluruh proses pendampingan di Relung Jiwa.'],
+  ['Bagaimana jika saya bingung memilih fasilitator?', 'Anda tidak perlu cemas. Tuliskan saja apa yang sedang Anda rasakan pada formulir di atas atau pilih sesi orientasi 15 menit. Tim kami akan mendengarkan kebutuhan unik Anda dan memberikan rekomendasi fasilitator yang paling selaras.'],
+]
 
 export default function Contact() {
   const settings = useSiteSettings()
-  const addressLines = settings.address ? settings.address.split(/\r?\n/).filter(Boolean) : []
+  const [sent, setSent] = useState(false)
+  const address = settings.address || 'Alamat studio akan dikonfirmasi saat reservasi.'
+  const whatsapp = settings.whatsapp?.url || 'https://wa.me/6281351780173'
+  return <>
+    <section className="relative overflow-hidden pb-14 pt-8 sm:pt-12"><div className="absolute -right-20 -top-20 h-80 w-80 rounded-full bg-soft-blush/45 blur-3xl" aria-hidden="true" /><div className="container-max relative"><div className="max-w-3xl"><div className="flex flex-wrap gap-2"><span className="rounded-full bg-surface-container-high px-3 py-1.5 text-xs font-semibold uppercase tracking-[.1em] text-cocoa">Pintu Terbuka • Ruang Percakapan Batin</span><span className="rounded-full bg-soft-blue px-3 py-1.5 text-xs font-semibold text-cocoa"><LockKeyhole size={14} className="mr-1 inline" />100% Terjaga & Rahasia • Non-Penghakiman</span></div><h1 className="page-title mt-6">Setiap Cerita Berhak Didengar dengan <em className="text-cocoa">Kelembutan.</em></h1><p className="mt-5 max-w-2xl text-lg leading-8 text-espresso/70">Tidak ada kegelisahan yang terlalu kecil atau terlalu rumit untuk disuarakan. Apakah Anda ingin memulai pendampingan pertama, bertanya seputar sesi, atau sekadar ingin menyapa, ruang ini selalu menyambut langkah Anda.</p><p className="mt-7 inline-flex items-center gap-3 rounded-full bg-surface-container-low px-4 py-3 text-sm text-espresso/65 shadow-sm"><span className="h-2.5 w-2.5 rounded-full bg-coral" />Ruang dengar aktif hari ini • Waktu respons rata-rata <strong className="text-cocoa">2–4 jam</strong></p></div></div></section>
 
-  return (
-    <section className="section">
-      <div className="container-max grid gap-10 lg:grid-cols-2 items-start">
-        <div>
-          <h1 className="text-3xl font-bold tracking-tight text-slate-900">Kontak</h1>
-          <p className="mt-3 text-slate-600 max-w-prose">Hubungi kami untuk menjadwalkan sesi atau menanyakan layanan.</p>
-          <div className="mt-6 space-y-3 text-slate-700">
-            {settings.whatsapp.url && settings.whatsapp.number ? (
-              <p>
-                WhatsApp:{' '}
-                <a className="text-brand-700 hover:underline" href={settings.whatsapp.url} target="_blank" rel="noreferrer">
-                  {settings.whatsapp.number}
-                </a>
-              </p>
-            ) : null}
-            {settings.email ? (
-              <p>
-                Email: <a className="text-brand-700 hover:underline" href={'mailto:' + settings.email}>{settings.email}</a>
-              </p>
-            ) : null}
-          </div>
-          <div className="mt-6 card">
-            <div className="card-body">
-              <p className="font-semibold text-slate-900">Lokasi</p>
-              {addressLines.length ? (
-                <ul className="mt-2 text-sm text-slate-600 space-y-2">
-                  {addressLines.map((line) => <li key={line}>{line}</li>)}
-                </ul>
-              ) : null}
-            </div>
-          </div>
-        </div>
-        <div className="card">
-          <div className="card-body">
-            <p className="font-semibold text-slate-900">Kirim Pesan</p>
-            <form className="mt-4 grid gap-4">
-              <input className="h-11 rounded-xl border border-slate-300 px-3 focus:outline-none focus:ring-2 focus:ring-brand-500" placeholder="Nama" />
-              <input className="h-11 rounded-xl border border-slate-300 px-3 focus:outline-none focus:ring-2 focus:ring-brand-500" placeholder="Email/WhatsApp" />
-              <textarea className="min-h-[120px] rounded-xl border border-slate-300 p-3 focus:outline-none focus:ring-2 focus:ring-brand-500" placeholder="Ceritakan kebutuhan Anda" />
-              <button type="button" className="btn btn-primary h-11">Kirim</button>
-            </form>
-            <p className="mt-3 text-xs text-slate-500">Dengan mengirim pesan, Anda menyetujui kami menghubungi balik untuk keperluan konsultasi.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-  )
+    <section className="container-max pb-14"><div className="flex items-end justify-between gap-6"><div><p className="eyebrow">Tiga Pilihan Terhubung</p><h2 className="mt-2 font-serif text-3xl text-espresso">Temukan Ritme yang Paling Nyaman</h2></div><p className="hidden font-serif text-lg italic text-cocoa md:block">“Tanpa desakan, sesuai kesiapan.”</p></div><div className="mt-7 grid gap-5 md:grid-cols-3">{pathways.map(([label, title, description, note, Icon], index) => <article key={title} className={`relative flex min-h-80 flex-col justify-between rounded-xl p-6 shadow-sm ${index === 1 ? 'bg-cocoa text-cream' : 'bg-surface-container-low'}`}><div>{index === 1 ? <span className="absolute -top-3 right-5 rounded-full bg-coral px-3 py-1 text-xs font-bold text-white">GRATIS 15 MENIT</span> : null}<div className="flex items-center justify-between"><span className={`text-xs font-bold tracking-[.1em] ${index === 1 ? 'text-cream/80' : 'text-cocoa'}`}>{label}</span><span className={`grid h-10 w-10 place-items-center rounded-full ${index === 1 ? 'bg-cream/10' : 'bg-surface-container-high'}`}><Icon size={20} /></span></div><h3 className="mt-6 font-serif text-2xl">{title}</h3><p className={`mt-3 text-sm leading-6 ${index === 1 ? 'text-cream/80' : 'text-espresso/65'}`}>{description}</p><p className={`mt-6 flex gap-2 text-xs font-semibold ${index === 1 ? 'text-cream/75' : 'text-espresso/55'}`}><Clock3 size={15} />{note}</p></div>{index === 0 ? <a href={whatsapp} target="_blank" rel="noreferrer" className="btn btn-quiet mt-6">Sapa via WhatsApp</a> : index === 1 ? <a href="#surat" className="btn btn-coral mt-6">Pilih Slot di Kalender <CalendarDays size={16} /></a> : <a href="#studio" className="btn btn-quiet mt-6">Detail Lokasi & Suasana</a>}</article>)}</div></section>
+
+    <section id="surat" className="container-max pb-14"><div className="grid gap-6 lg:grid-cols-12"><div className="rounded-xl bg-surface p-6 shadow-md sm:p-8 lg:col-span-7"><p className="eyebrow text-coral">Surat Tertulis</p><h2 className="mt-2 font-serif text-3xl text-espresso">Surat untuk Ruang Hening</h2><p className="mt-3 text-sm leading-6 text-espresso/65">Jika percakapan langsung terasa terburu-buru, tuangkan isi hatimu di sini. Fasilitator kami membaca setiap pesan secara utuh dan membalasnya dengan perhatian penuh.</p><form className="mt-7 space-y-5" onSubmit={(event) => { event.preventDefault(); setSent(true); event.currentTarget.reset() }}><div className="grid gap-4 sm:grid-cols-2"><label className="text-sm font-semibold text-espresso">Nama Panggilan / Inisial<input required className="input-editorial mt-2" placeholder="Misal: Sari, Rian, atau A.K." /><span className="mt-1 block text-xs font-normal text-espresso/50">Boleh inisial jika ingin anonim</span></label><label className="text-sm font-semibold text-espresso">Alamat Surel<input required type="email" className="input-editorial mt-2" placeholder="surel@domain.com" /><span className="mt-1 block text-xs font-normal text-espresso/50">Untuk balasan tertulis dari kami</span></label></div><div className="grid gap-4 sm:grid-cols-2"><label className="text-sm font-semibold text-espresso">Nomor WhatsApp <span className="font-normal text-espresso/50">(Opsional)</span><input className="input-editorial mt-2" placeholder="0812-xxxx-xxxx" /></label><label className="text-sm font-semibold text-espresso">Fokus yang Sedang Dihadapi<select className="input-editorial mt-2"><option>Kelelahan Batin & Burnout Rutinitas</option><option>Dinamika Relasi & Pasangan</option><option>Kecemasan Menghadapi Transisi Hidup</option><option>Ruang Memproses Kehilangan & Duka</option><option>Lainnya / Ingin Berbagi Cerita Bebas</option></select></label></div><label className="block text-sm font-semibold text-espresso">Ceritakan Apa yang Sedang Bergemuruh di Hatimu<textarea required className="input-editorial mt-2 min-h-36" placeholder="Tuliskan apa saja yang ingin kamu tumpahkan, tanpa perlu merasa harus rapi, terstruktur, atau sempurna. Mulai dari satu helaan napas..." /></label><label className="flex gap-3 text-xs leading-5 text-espresso/60"><input required type="checkbox" className="mt-1" />Saya memahami bahwa pesan ini diperlakukan dengan kerahasiaan penuh, dan Relung Jiwa menyediakan pendampingan kontemplatif non-klinis.</label><div className="flex flex-wrap items-center gap-4"><button type="submit" className="btn btn-coral">Kirimkan Pesan Batin <Send size={16} /></button><span className="flex items-center gap-2 text-xs text-espresso/50"><ShieldCheck size={16} className="text-sky-blue" />Terenkripsi & hanya diakses fasilitator</span></div>{sent ? <div className="flex gap-3 rounded-lg bg-soft-blue p-4 text-sm text-cocoa"><CheckCircle2 className="shrink-0" />Pesanmu telah mendarat dengan aman. Tim fasilitator kami akan mengirimkan balasan hangat ke surel Anda.</div> : null}</form></div><aside id="studio" className="space-y-5 lg:col-span-5"><div className="rounded-xl bg-surface-container p-6 shadow-sm"><div className="flex gap-3"><MapPin className="text-cocoa" /><div><p className="eyebrow">Suaka Fisik</p><h2 className="mt-1 font-serif text-2xl text-espresso">Studio Hening Relung Jiwa</h2></div></div><p className="mt-4 text-sm leading-6 text-espresso/65">{address}</p><div className="relative mt-5 overflow-hidden rounded-lg"><img src="/assets/img/upload/Folder%20Upload%20All%20Mentor/Foto%20mentor/DSC00539.jpeg" alt="Suasana Studio Hening" className="h-56 w-full object-cover" /><span className="absolute bottom-3 left-3 rounded bg-espresso/80 px-3 py-1.5 text-xs font-semibold text-cream">Zona Bebas Bising • Teh Herbal Hangat</span></div><div className="mt-4 space-y-2 text-xs"><p className="flex justify-between rounded bg-surface p-3"><span>Sesi Tatap Muka Privat</span><span>Sel – Sab (10.00 – 19.00 WIB)</span></p><p className="flex justify-between rounded bg-surface p-3"><span>Ruang Baca & Meditasi Bebas</span><span>Sabtu (09.00 – 12.00 WIB)</span></p><p className="flex justify-between rounded bg-surface p-3"><span>Pendampingan Daring (Online)</span><span>Senin – Minggu (Fleksibel)</span></p></div><p className="mt-4 text-xs leading-5 text-espresso/55">Parkir kendaraan roda 4 terbatas untuk menjaga kesunyian lingkungan. Sangat disarankan memanfaatkan transportasi umum atau taksi daring.</p></div><a href="https://maps.google.com" target="_blank" rel="noreferrer" className="flex h-40 items-end rounded-xl bg-cocoa p-5 text-sm font-semibold text-cream shadow-sm">Buka di Google Maps</a></aside></div></section>
+
+
+    <section className="bg-surface-container-low/70 py-16 sm:py-20"><div className="container-max"><div className="mx-auto max-w-2xl text-center"><p className="eyebrow">Pertanyaan yang Kerap Diajukan</p><h2 className="section-title mt-3">Kejelasan Sebelum Memulai Langkah</h2><p className="mt-3 text-espresso/60">Kami mengerti bahwa mengambil inisiatif untuk bercerita menuntut keberanian. Berikut beberapa hal yang sering ditanyakan.</p></div><div className="mt-10 grid gap-5 md:grid-cols-3">{quickFaq.map(([title, body], index) => <article key={title} className="rounded-xl bg-surface-container p-6 shadow-sm"><span className="grid h-8 w-8 place-items-center rounded-full bg-surface-container-highest text-xs font-bold text-cocoa">0{index + 1}</span><h3 className="mt-5 font-serif text-2xl leading-snug text-espresso">{title}</h3><p className="mt-4 text-sm leading-6 text-espresso/60">{body}</p></article>)}</div><p className="mx-auto mt-12 max-w-xl text-center font-serif text-xl italic leading-8 text-cocoa">“Pintu ini tidak pernah terkunci. Datanglah ketika napasmu butuh bersandar sejenak.”</p></div></section>
+  </>
 }
+

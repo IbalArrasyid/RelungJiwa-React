@@ -1,64 +1,60 @@
-export default function Packages() {
-  const plans = [
-    {
-      name: 'Konseling (Online)',
-      price: 'Rp 350.000/sesi',
-      items: [
-        'Asesmen singkat & perencanaan tujuan',
-        'Konseling 60 menit via video',
-        'Rangkuman langkah praktis',
-      ],
-      cta: 'Mulai Konseling',
-    },
-    {
-      name: 'Hipnoterapi Standar',
-      price: 'Rp 1.200.000/sesi',
-      items: [
-        'Sesi privat 75–90 menit (tatap muka / online)',
-        'Induksi, pendalaman, dan sugesti terarah',
-        'Latihan lanjutan untuk di rumah',
-      ],
-      cta: 'Pesan Sesi',
-      featured: true,
-    },
-    {
-      name: 'Hipnoterapi Intensif',
-      price: 'Rp 2.500.000/sesi',
-      items: [
-        'Sesi privat intensif 90–120 menit',
-        'Pendampingan chat 7 hari pasca sesi',
-        'Rencana praktik personalisasi',
-      ],
-      cta: 'Atur Jadwal',
-    },
-  ]
+import { useMemo, useState } from 'react'
+import { ArrowRight, Bell, CalendarDays, CheckCircle2, Circle, Clock3, LockKeyhole, Mail, UsersRound } from 'lucide-react'
+import { Link } from 'react-router-dom'
+import { usePrograms } from '../hooks/usePrograms'
 
-  return (
-    <section className="section">
-      <div className="container-max">
-        <h1 className="text-3xl font-bold tracking-tight text-slate-900">Paket & Harga</h1>
-        <p className="mt-3 text-slate-600 max-w-prose">
-          Investasi untuk ketenangan jangka panjang. Harga dapat berubah sewaktu-waktu. Hasil tiap individu
-          bervariasi tergantung kondisi dan konsistensi latihan.
-        </p>
-        <div className="mt-8 grid gap-6 md:grid-cols-3">
-          {plans.map((p) => (
-            <div key={p.name} className={`card ${p.featured ? 'ring-2 ring-brand-500' : ''}`}>
-              <div className="card-body">
-                <p className="text-slate-900 font-semibold">{p.name}</p>
-                <p className="mt-2 text-2xl font-bold text-slate-900">{p.price}</p>
-                <ul className="mt-4 space-y-2 text-sm text-slate-600">
-                  {p.items.map((it) => <li key={it}>• {it}</li>)}
-                </ul>
-                <a href="https://wa.me/6281351780173" target="_blank" rel="noreferrer" className="btn btn-primary h-10 px-4 mt-6 inline-flex">{p.cta}</a>
-              </div>
-            </div>
-          ))}
-        </div>
-        <p className="mt-6 text-xs text-slate-500">Tidak ada jaminan kesembuhan instan; kami mendampingi proses perubahan yang realistis dan aman.</p>
-      </div>
-    </section>
-  )
+const fallbackImages = [
+  '/assets/img/upload/Folder%20Upload%20All%20Mentor/Foto%20mentor/DSC00546.jpeg',
+  '/assets/img/upload/Folder%20Upload%20All%20Mentor/Foto%20mentor/DSC00497.jpeg',
+]
+
+const rows = [
+  { status: 'open', label: 'Pendaftaran Dibuka', date: '28 Okt 2024', schedule: 'Sabtu • 13:30 - 17:00 WIB', badge: 'Tersisa 4 Kursi', type: 'Workshop Daring Interaktif', format: 'Via Zoom Audio-Visual Hening', title: 'Seni Menerima Duka & Kehilangan: Membuka Ruang Bagi yang Telah Usai', description: 'Bimbingan langkah demi langkah mengurai rasa hampa akibat kehilangan relasi, transisi hidup mendadak, serta proses berdamai dengan perpisahan tanpa memaksakan kepositifan palsu.', person: 'Fasilitator: Pratiwi Anindya, M.Psi., Psikolog', actionNote: 'Investasi Program: Rp 350.000', action: 'Amankan Tempat' },
+  { status: 'upcoming', label: 'Segera Hadir', date: '18 Nov 2024', schedule: 'Program 14 Hari Mandiri', badge: 'Rilis Materi Pekan Depan', type: 'Kelas Daring & Panduan Jurnal', format: 'Audio Harian & Cetak PDF Eksklusif', title: 'Menata Pikiran yang Bising: Metode Journaling Terapeutik', description: 'Latihan menulis ekspresif terarah untuk meredakan overthinking, memetakan pemicu kecemasan harian, dan membangun percakapan batin yang penuh welas asih.', person: 'Kurator: Tim Redaksi & Praktisi Mindfulness Relung Jiwa', actionNote: 'Early Access Notification', action: 'Ingatkan Saya / Waitlist' },
+  { status: 'closed', label: 'Pendaftaran Ditutup', date: '5 – 7 Des 2024', schedule: '3 Hari 2 Malam di Ubud, Bali', badge: 'Kuota Penuh (16/16)', type: 'Retreat Imersif Luring', format: 'Digital Detox & Noble Silence', title: 'Retreat Hening Akhir Pekan: Menemukan Rumah di Dalam Diri', description: 'Tiga hari menyelami kesunyian alam di lereng bukit Ubud. Meliputi sesi meditasi berjalan, terapi suara genta Tibet, makan berkesadaran, serta pelepasan beban emosional kolektif.', person: 'Fasilitator: Arya Wicaksono & Residen Guru Meditasi Ubud', actionNote: 'Batch Berikutnya: Februari 2025', action: 'Gabung Daftar Tunggu' },
+  { status: 'archive', label: 'Program Terlaksana', date: 'September 2024', schedule: 'Dokumentasi & Catatan Tersedia', badge: '120 Peserta Selesai', type: 'Webinar Interaktif & Riset', format: 'Arsip Publik Terpilih', title: 'Navigasi Krisis Usia Seperempat Abad (Quarter-Life Crisis)', description: 'Membedah kepanikan karir, perbandingan sosial di era digital, dan mendefinisikan ulang makna keberhasilan pribadi dengan panduan psikologi eksistensial.', person: 'Pembicara: Rian Hidayat, M.Psi & Panel Alumni', actionNote: 'Akses Bacaan Bebas', action: 'Lihat Rangkuman & Insight' },
+]
+
+const testimonials = [
+  ['SN', 'Sekar Nandita', 'Alumni Kohort “Kembali Pulang”', '“Selama ini saya kira self-care adalah liburan mahal. Di kelas ini, saya baru paham bahwa self-care yang sesungguhnya adalah keberanian mendengarkan tubuh saat ia berteriak lelah.”'],
+  ['BW', 'Bagas Wicaksono', 'Peserta Workshop Duka & Kehilangan', '“Ruang hening yang diciptakan fasilitator tidak menghakimi sama sekali. Untuk pertama kalinya dalam 5 tahun, saya bisa menangis tanpa perlu merasa bersalah atas kesedihan saya.”'],
+  ['MA', 'Mirna Aryani', 'Peserta Therapeutic Journaling', '“Metode journaling yang dipelajari sangat aplikatif. Sekarang saat kepala terasa penuh dan bising di tengah pekerjaan, saya tahu persis bagaimana cara mengurainya kembali.”'],
+]
+
+function Action({ href, label, className }) {
+  if (href?.startsWith('/')) return <Link to={href} className={className}>{label}<ArrowRight size={16} aria-hidden="true" /></Link>
+  return <a href={href || '/kontak'} target={href?.startsWith('http') ? '_blank' : undefined} rel={href?.startsWith('http') ? 'noreferrer' : undefined} className={className}>{label}<ArrowRight size={16} aria-hidden="true" /></a>
 }
 
+function ProgramRow({ item, cta }) {
+  const statusClass = { open: 'text-coral', upcoming: 'text-cocoa', closed: 'text-espresso/55', archive: 'text-espresso/45' }[item.status]
+  const cardClass = item.status === 'archive' ? 'bg-surface-container-low/70 opacity-80' : item.status === 'closed' ? 'bg-surface-container-low' : 'bg-surface'
+  const actionClass = item.status === 'open' ? 'btn btn-coral h-11 min-h-11' : item.status === 'upcoming' ? 'btn btn-quiet h-11 min-h-11' : 'btn bg-surface-container h-11 min-h-11 text-cocoa hover:bg-surface-container-high'
+  return <article className={`rounded-xl p-6 shadow-sm sm:p-7 ${cardClass}`}><div className="grid gap-6 lg:grid-cols-12 lg:items-center lg:gap-9"><div className="lg:col-span-3"><p className={`text-xs font-bold uppercase tracking-[.13em] ${statusClass}`}>{item.label}</p><h3 className="mt-1 font-serif text-2xl text-espresso">{item.date}</h3><p className="mt-1 text-sm text-espresso/60">{item.schedule}</p><span className="mt-4 inline-flex rounded bg-soft-blush px-3 py-1.5 text-xs font-semibold text-cocoa">{item.badge}</span></div><div className="lg:col-span-6"><div className="flex flex-wrap items-center gap-2 text-xs text-espresso/55"><span className="rounded bg-surface-container-high px-2 py-1 font-semibold">{item.type}</span><span>•</span><span>{item.format}</span></div><h3 className="mt-4 font-serif text-2xl leading-snug text-espresso">{item.title}</h3><p className="mt-3 leading-7 text-espresso/65">{item.description}</p><p className="mt-3 text-xs font-semibold text-cocoa">{item.person}</p></div><div className="flex flex-col items-start gap-3 lg:col-span-3 lg:items-end"><p className="text-xs text-espresso/60">{item.actionNote}</p><Action href={cta} label={item.action} className={actionClass} /></div></div></article>
+}
+
+export default function Packages() {
+  const { programs } = usePrograms()
+  const [filter, setFilter] = useState('all')
+  const [subscribed, setSubscribed] = useState(false)
+  const livePrograms = Array.isArray(programs) ? programs : []
+  const featured = useMemo(() => livePrograms.find((program) => program.featured) || livePrograms[0], [livePrograms])
+  const featuredImage = featured?.image || fallbackImages[0]
+  const cta = featured?.registrationURL || '/kontak'
+  const visibleRows = filter === 'all' ? rows : rows.filter((row) => row.status === filter)
+
+  return <>
+    <section className="container-max pb-10 pt-8 sm:pt-12"><div className="grid gap-9 lg:grid-cols-[8fr_4fr] lg:items-end"><div><p className="eyebrow flex items-center gap-2"><span className="h-2 w-2 rounded-full bg-coral" />Program &amp; Ruang Belajar <span className="text-espresso/30">/</span><span className="text-espresso/55">Kalender Kurasi 2024</span></p><h1 className="page-title mt-5 max-w-3xl">Bertumbuh bersama dalam <em className="text-cocoa">ruang refleksi</em> yang terstruktur.</h1></div><div><p className="leading-7 text-espresso/65">Rangkaian lokakarya intim, webinar terpandu, dan retreat jeda yang dirancang secara saintifik dan etis untuk membantu Anda menyusuri dinamika batin tanpa ketergesaan.</p><p className="mt-5 flex flex-wrap items-center gap-4 text-xs font-semibold text-espresso/55"><span className="flex items-center gap-1.5"><CheckCircle2 size={16} className="text-sky-blue" />Fasilitator Tersertifikasi</span><span>•</span><span className="flex items-center gap-1.5"><UsersRound size={16} className="text-cocoa" />Kohort Terbatas</span></p></div></div></section>
+
+    <section className="container-max py-3"><div className="relative overflow-hidden rounded-xl bg-surface p-6 shadow-md sm:p-9 lg:p-10"><div className="absolute -bottom-24 -right-24 h-96 w-96 rounded-full bg-soft-blush/50 blur-3xl" aria-hidden="true" /><div className="relative grid gap-9 lg:grid-cols-12 lg:items-center"><div className="lg:col-span-5"><div className="relative overflow-hidden rounded-lg bg-surface-container shadow-sm"><img src={featuredImage} alt={featured?.imageAlt || 'Program unggulan Relung Jiwa'} className="aspect-[4/3] w-full object-cover" /><span className="absolute left-4 top-4 rounded-full bg-coral px-3 py-1.5 text-xs font-semibold text-white">PENDAFTARAN DIBUKA • TERSISA 6 KURSI</span><div className="absolute bottom-4 left-4 right-4 flex items-center justify-between gap-3 rounded-lg bg-surface-container-low/90 p-3 text-xs font-semibold text-espresso backdrop-blur-sm"><span className="flex items-center gap-2"><CalendarDays size={16} className="text-sky-blue" />14 Okt – 4 Nov 2024</span><span>Setiap Sabtu • 4 Pekan</span></div></div><div className="mt-4 flex items-center gap-3 rounded-lg bg-surface-container-low p-4"><img src="/assets/img/upload/Folder%20Upload%20All%20Mentor/Foto%20mentor/DSC00490.jpeg" alt="Coach Dehan" className="h-12 w-12 rounded-full object-cover" /><div><p className="text-xs font-bold uppercase tracking-[.12em] text-cocoa">Fasilitator Utama</p><p className="text-sm font-medium text-espresso">Coach Dehan &amp; Praktisi Somatik Tamu</p><p className="text-xs text-espresso/55">Spesialis Regulasi Saraf &amp; Inner-Child Work</p></div></div></div><div className="lg:col-span-7 lg:pl-4"><div className="flex flex-wrap gap-2"><span className="rounded-full bg-surface-container-high px-3 py-1.5 text-xs font-semibold text-cocoa">Program Unggulan Kohort #04</span><span className="rounded-full bg-soft-blue px-3 py-1.5 text-xs font-semibold text-cocoa">Hibrida (Studio &amp; Zoom HD)</span></div><h2 className="mt-5 font-serif text-4xl leading-tight text-espresso">Kembali Pulang: 4-Week Guided Emotional Healing &amp; Somatic Intensive</h2><p className="mt-5 leading-7 text-espresso/65">Sebuah eksplorasi intensif berdurasi 30 hari untuk mengenali trauma tersimpan di tubuh, mendamaikan kritik internal, dan menyusun peta regulasi emosi mandiri yang berkelanjutan.</p><div className="mt-6 grid grid-cols-2 gap-2 sm:grid-cols-4">{[['Pekan 01', 'Grounding Tubuh', 'Somatic release & nafas'], ['Pekan 02', 'Dialog Batin', 'Peta inner-critic'], ['Pekan 03', 'Batas & Relasi', 'Healthy boundaries'], ['Pekan 04', 'Integrasi Jiwa', 'Ritual hening harian']].map(([week, title, note]) => <div key={week} className="rounded-lg bg-surface-container-low p-3"><p className="text-xs font-semibold text-cocoa">{week}</p><p className="mt-1 text-xs font-semibold text-espresso">{title}</p><p className="mt-1 text-[11px] leading-4 text-espresso/55">{note}</p></div>)}</div><div className="mt-7 flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between"><div className="flex items-center gap-3"><span className="grid h-11 w-11 place-items-center rounded-full border-[3px] border-coral text-xs font-bold text-espresso">75%</span><div><p className="text-xs font-semibold text-espresso">18 dari 24 Peserta Terdaftar</p><p className="mt-1 text-xs text-espresso/55">Pendaftaran ditutup dalam 3 hari</p></div></div><Action href={cta} label="Daftar Program Sekarang" className="btn btn-coral" /></div></div></div></div></section>
+
+    <section className="container-max pb-4 pt-16 sm:pt-20"><div className="flex flex-col gap-5 md:flex-row md:items-center md:justify-between"><div><h2 className="section-title">Kalender &amp; Alur Program</h2><p className="mt-2 text-sm text-espresso/60">Pilih format pembelajaran yang selaras dengan kapasitas emosional Anda saat ini.</p></div><div className="flex max-w-full gap-1 overflow-x-auto rounded-lg bg-surface-container p-1">{[['all', 'Semua Program (8)'], ['open', 'Pendaftaran Dibuka (2)'], ['upcoming', 'Mendatang (2)'], ['closed', 'Penuh (1)'], ['archive', 'Arsip Selesai (3)']].map(([value, label]) => <button key={value} type="button" onClick={() => setFilter(value)} className={`shrink-0 rounded px-4 py-2 text-xs font-semibold transition ${filter === value ? 'bg-surface text-cocoa shadow-sm' : 'text-espresso/55 hover:text-espresso'}`}>{label}</button>)}</div></div></section>
+
+    <section className="container-max py-4"><div className="grid gap-4">{visibleRows.map((item) => <ProgramRow key={item.status} item={item} cta={cta} />)}</div></section>
+
+    <section className="container-max py-16 sm:py-20"><div className="mx-auto max-w-2xl text-center"><p className="eyebrow">Gema Dari Perjalanan</p><h2 className="section-title mt-4">Apa kata mereka yang telah melangkah perlahan.</h2><p className="mt-4 text-espresso/60">Catatan jujur dari jiwa-jiwa yang menemukan ruang bernafas kembali di Relung Jiwa.</p></div><div className="mt-12 grid gap-5 md:grid-cols-3">{testimonials.map(([initials, name, role, quote], index) => <article key={name} className="flex min-h-80 flex-col rounded-xl bg-surface p-6 shadow-sm"><span className="font-serif text-5xl leading-none text-espresso/15">”</span><p className="mt-4 font-serif text-xl italic leading-relaxed text-espresso">{quote}</p><div className="mt-auto flex items-center gap-3 pt-6"><span className={`grid h-10 w-10 place-items-center rounded-full text-xs font-bold ${index === 1 ? 'bg-soft-blue text-cocoa' : 'bg-soft-blush text-cocoa'}`}>{initials}</span><div><p className="text-sm font-semibold text-espresso">{name}</p><p className="text-xs text-espresso/55">{role}</p></div></div></article>)}</div></section>
+
+    <section className="container-max pb-16 sm:pb-24"><div className="relative overflow-hidden rounded-xl bg-cocoa px-7 py-14 text-cream shadow-md sm:px-12 sm:py-20"><div className="absolute -bottom-16 -right-16 h-80 w-80 rounded-full bg-soft-blush/20" aria-hidden="true" /><div className="relative max-w-2xl"><p className="eyebrow text-sky-blue"><Mail size={16} className="mr-2 inline" />Kabar Pembukaan Program</p><h2 className="mt-5 font-serif text-4xl leading-tight sm:text-5xl">Ingin menjadi yang pertama tahu saat pintu pendaftaran dibuka?</h2><p className="mt-5 leading-7 text-cream/80">Kami membatasi kapasitas setiap lokakarya untuk menjaga intimasi dan ruang emosional yang aman. Daftarkan surel Anda untuk menerima undangan prioritas 48 jam sebelum diumumkan ke publik.</p><form className="mt-7 flex max-w-lg flex-col gap-2 sm:flex-row" onSubmit={(event) => { event.preventDefault(); setSubscribed(true); event.currentTarget.reset() }}><input type="email" required placeholder="Tuliskan alamat surel Anda..." className="min-h-12 flex-1 rounded-lg border-0 bg-surface px-4 text-sm text-espresso placeholder:text-espresso/45 focus:outline-none focus:ring-2 focus:ring-sky-blue" /><button type="submit" className="btn btn-coral">Dapatkan Undangan</button></form>{subscribed ? <p className="mt-4 flex items-center gap-2 text-sm text-sky-blue"><CheckCircle2 size={17} />Terima kasih. Anda telah masuk ke daftar korespondensi hening Relung Jiwa.</p> : null}<p className="mt-4 text-xs leading-5 text-cream/65">*Kami menghormati privasi batin Anda. Bebas dari spam promosi komersial. Berhenti langganan kapan saja.</p></div></div></section>
+  </>
+}
 
