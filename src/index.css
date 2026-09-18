@@ -1,5 +1,52 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,300..700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-:root{font-family:'DM Sans',sans-serif;color:#292321;background:#F8F3EC;font-synthesis:none;text-rendering:optimizeLegibility;-webkit-font-smoothing:antialiased}html{scroll-behavior:smooth}body{min-width:320px;margin:0;overflow-x:hidden}*{box-sizing:border-box}.container-max{@apply mx-auto max-w-7xl px-5 sm:px-8 lg:px-10}.section{@apply py-16 sm:py-24}.font-serif,.display-title,.section-title{font-family:'Playfair Display',Georgia,serif}.display-title,.section-title{@apply text-espresso}.section-title{@apply text-4xl leading-[1.08] sm:text-5xl}.eyebrow{@apply text-xs font-bold uppercase tracking-[.18em] text-coral}.btn{@apply inline-flex items-center justify-center gap-2 px-6 py-3.5 text-base font-semibold transition focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2}.btn-coral{@apply bg-coral text-white hover:bg-[#bd3935] focus-visible:ring-coral}.btn-outline{@apply border border-cocoa/30 bg-transparent text-cocoa hover:border-cocoa hover:bg-white focus-visible:ring-cocoa}.hero-orb{position:absolute;border-radius:9999px;pointer-events:none}.hero-orb-one{width:22rem;height:22rem;right:-8rem;top:5rem;background:#E2F0F6}.hero-orb-two{width:12rem;height:12rem;left:-5rem;bottom:4rem;background:#F5E1E3}@media (prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition-duration:.01ms!important;animation-duration:.01ms!important}}
+
+:root {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  color: #292321;
+  background: #fef9f2;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html { scroll-behavior: smooth; }
+body { min-width: 320px; margin: 0; overflow-x: hidden; background: #fef9f2; }
+* { box-sizing: border-box; }
+::selection { background: #ffdbcd; color: #2e150a; }
+
+.container-max { @apply mx-auto w-full max-w-[1200px] px-5 sm:px-6 lg:px-8; }
+.section { @apply py-16 sm:py-20 lg:py-24; }
+.font-serif, .display-title, .section-title, .page-title, .editorial-quote { font-family: 'Newsreader', Georgia, serif; }
+.display-title, .section-title, .page-title { @apply font-normal tracking-[-.02em] text-espresso; }
+.display-title { font-size: clamp(2.6rem, 5.2vw, 4.5rem); line-height: .98; }
+.section-title { font-size: clamp(2rem, 3.5vw, 3.25rem); line-height: 1.05; }
+.page-title { font-size: clamp(2.5rem, 5vw, 4rem); line-height: 1.03; }
+.eyebrow { @apply text-xs font-semibold uppercase tracking-[.16em] text-cocoa; }
+
+.btn { @apply inline-flex min-h-12 items-center justify-center gap-2 rounded-lg px-6 py-3 text-sm font-semibold transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-cocoa focus-visible:ring-offset-2; }
+.btn-coral, .btn-primary { @apply bg-coral text-white shadow-[0_8px_30px_-4px_rgba(41,35,33,.08)] hover:bg-[#b12b2a]; }
+.btn-outline { @apply border-[1.5px] border-cocoa bg-transparent text-cocoa hover:bg-cream; }
+.btn-quiet { @apply bg-surface-container text-cocoa hover:bg-surface-container-high; }
+.btn:disabled { cursor: not-allowed; opacity: .6; }
+
+.editorial-card { @apply rounded-xl border border-cocoa/15 bg-white shadow-[0_8px_30px_-4px_rgba(41,35,33,.05),0_2px_6px_-1px_rgba(41,35,33,.03)]; }
+.surface-rule { @apply border-cocoa/15; }
+.input-editorial { @apply w-full rounded-lg border border-espresso/20 bg-white px-4 py-3 text-espresso placeholder:text-espresso/45 focus:border-cocoa focus:outline-none focus:ring-4 focus:ring-cocoa/15; }
+
+.hero-orb { position: absolute; border-radius: 9999px; pointer-events: none; }
+.hero-orb-one { width: 22rem; height: 22rem; right: -8rem; top: 5rem; background: #e2f0f6; }
+.hero-orb-two { width: 12rem; height: 12rem; left: -5rem; bottom: 4rem; background: #f5e1e3; }
+
+@media (max-width: 639px) {
+  .container-max { @apply px-5; }
+  .section { @apply py-14; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; }
+}

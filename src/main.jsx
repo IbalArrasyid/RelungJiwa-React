@@ -10,6 +10,7 @@ import Packages from './pages/Packages'
 import Programs from './pages/Programs'
 import Contact from './pages/Contact'
 import FAQ from './pages/FAQ'
+import Journal from './pages/Journal'
 import PagesIndex from './pages/PagesIndex'
 import StaticPage from './pages/StaticPage'
 
@@ -24,6 +25,7 @@ const router = createBrowserRouter([
       { path: 'paket', element: <Packages /> },
       { path: 'program', element: <Programs /> },
       { path: 'faq', element: <FAQ /> },
+      { path: 'jurnal', element: <Journal /> },
       { path: 'kontak', element: <Contact /> },
       { path: 'pages', element: <PagesIndex /> },
       { path: 'pages/:slug', element: <StaticPage /> },
@@ -36,5 +38,6 @@ createRoot(document.getElementById('root')).render(
     <RouterProvider router={router} />
   </React.StrictMode>
 )
+
 
 

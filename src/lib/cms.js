@@ -414,7 +414,7 @@ export function fetchFooter() {
 
   return footerRequest
 }
-const applicationPaths = new Set(['/', '/tentang', '/layanan', '/paket', '/program', '/faq', '/kontak'])
+const applicationPaths = new Set(['/', '/tentang', '/layanan', '/paket', '/program', '/jurnal', '/faq', '/kontak'])
 
 function normalizeHeaderLink(link, label, id) {
   const normalizedLabel = configuredText(label)
@@ -510,3 +510,4 @@ export function fetchHomepage() {
   }
   return homepageRequest
 }
+

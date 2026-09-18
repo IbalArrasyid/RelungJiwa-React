@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+
+<html lang="id"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..700&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+          "surface-container": "#f2ede6",
+          "inverse-primary": "#ebbcaa",
+          "tertiary-fixed": "#bee9ff",
+          "primary-fixed": "#ffdbcd",
+          "primary-container": "#815c4d",
+          "primary-fixed-dim": "#ebbcaa",
+          "surface-container-lowest": "#ffffff",
+          "on-secondary-container": "#650008",
+          "error": "#ba1a1a",
+          "error-container": "#ffdad6",
+          "on-surface": "#1d1c17",
+          "tertiary": "#165369",
+          "on-tertiary-container": "#bee9ff",
+          "secondary": "#b12b2a",
+          "surface": "#fef9f2",
+          "background": "#fef9f2",
+          "surface-container-high": "#ece7e1",
+          "secondary-fixed": "#ffdad6",
+          "on-primary-container": "#ffdbcd",
+          "on-error-container": "#93000a",
+          "surface-variant": "#e7e2db",
+          "tertiary-container": "#346b82",
+          "on-background": "#1d1c17",
+          "on-error": "#ffffff",
+          "on-secondary-fixed-variant": "#8f0f16",
+          "on-primary-fixed": "#2e150a",
+          "on-tertiary-fixed-variant": "#0c4d63",
+          "tertiary-fixed-dim": "#99cee8",
+          "surface-bright": "#fef9f2",
+          "surface-container-low": "#f8f3ec",
+          "surface-container-highest": "#e7e2db",
+          "surface-dim": "#ded9d3",
+          "inverse-surface": "#32302c",
+          "outline": "#82746f",
+          "on-tertiary": "#ffffff",
+          "on-secondary-fixed": "#410003",
+          "outline-variant": "#d4c3bd",
+          "on-surface-variant": "#504440",
+          "on-tertiary-fixed": "#001f2a",
+          "on-primary-fixed-variant": "#603f31",
+          "surface-tint": "#7a5647",
+          "inverse-on-surface": "#f5f0e9",
+          "primary": "#664537",
+          "secondary-fixed-dim": "#ffb3ad",
+          "on-primary": "#ffffff",
+          "secondary-container": "#fd625b",
+          "on-secondary": "#ffffff"
+        },
+        "borderRadius": {
+          "DEFAULT": "0.25rem",
+          "lg": "0.5rem",
+          "xl": "0.75rem",
+          "full": "9999px"
+        },
+        "spacing": {
+          "gutter": "1.5rem",
+          "space-xl": "2.5rem",
+          "margin": "2rem",
+          "space-md": "1rem",
+          "space-sm": "0.5rem",
+          "space-lg": "1.5rem",
+          "space-xs": "0.25rem"
+        },
+        "fontFamily": {
+          "headline-lg-mobile": [
+            "Newsreader"
+          ],
+          "headline-xl-mobile": [
+            "Newsreader"
+          ],
+          "headline-md": [
+            "Newsreader"
+          ],
+          "label-md": [
+            "Plus Jakarta Sans"
+          ],
+          "label-lg": [
+            "Plus Jakarta Sans"
+          ],
+          "headline-sm": [
+            "Newsreader"
+          ],
+          "headline-xl": [
+            "Newsreader"
+          ],
+          "body-md": [
+            "Plus Jakarta Sans"
+          ],
+          "quote-editorial": [
+            "Newsreader"
+          ],
+          "body-lg": [
+            "Plus Jakarta Sans"
+          ],
+          "body-sm": [
+            "Plus Jakarta Sans"
+          ],
+          "headline-lg": [
+            "Newsreader"
+          ]
+        },
+        "fontSize": {
+          "headline-lg-mobile": [
+            "28px",
+            {
+              "lineHeight": "36px",
+              "letterSpacing": "-0.01em",
+              "fontWeight": "400"
+            }
+          ],
+          "headline-xl-mobile": [
+            "36px",
+            {
+              "lineHeight": "44px",
+              "letterSpacing": "-0.01em",
+              "fontWeight": "400"
+            }
+          ],
+          "headline-md": [
+            "28px",
+            {
+              "lineHeight": "36px",
+              "fontWeight": "400"
+            }
+          ],
+          "label-md": [
+            "12px",
+            {
+              "lineHeight": "16px",
+              "letterSpacing": "0.04em",
+              "fontWeight": "600"
+            }
+          ],
+          "label-lg": [
+            "14px",
+            {
+              "lineHeight": "20px",
+              "letterSpacing": "0.02em",
+              "fontWeight": "600"
+            }
+          ],
+          "headline-sm": [
+            "22px",
+            {
+              "lineHeight": "30px",
+              "fontWeight": "500"
+            }
+          ],
+          "headline-xl": [
+            "56px",
+            {
+              "lineHeight": "68px",
+              "letterSpacing": "-0.02em",
+              "fontWeight": "400"
+            }
+          ],
+          "body-md": [
+            "16px",
+            {
+              "lineHeight": "26px",
+              "fontWeight": "400"
+            }
+          ],
+          "quote-editorial": [
+            "24px",
+            {
+              "lineHeight": "36px",
+              "fontWeight": "400"
+            }
+          ],
+          "body-lg": [
+            "18px",
+            {
+              "lineHeight": "28px",
+              "fontWeight": "400"
+            }
+          ],
+          "body-sm": [
+            "14px",
+            {
+              "lineHeight": "22px",
+              "fontWeight": "400"
+            }
+          ],
+          "headline-lg": [
+            "40px",
+            {
+              "lineHeight": "48px",
+              "letterSpacing": "-0.015em",
+              "fontWeight": "400"
+            }
+          ]
+        }
+      }
+    }
+  }</script></head><body class="bg-background font-body-md text-body-md text-on-surface antialiased"><header class="fixed top-0 left-0 right-0 z-50 px-margin pt-space-sm"><div class="max-w-[1200px] mx-auto h-20 bg-surface-container-low/80 backdrop-blur-xl rounded-xl shadow-[0_8px_30px_-4px_rgba(41,35,33,0.05),0_2px_6px_-1px_rgba(41,35,33,0.03)] flex items-center justify-between px-space-lg"><div class="flex items-center gap-space-md"><img alt="Image from https://relung-jiwa-react-three.vercel.app/assets/brand/relung-jiwa-landscape.png" class="h-8 w-auto object-contain" src="https://lh3.googleusercontent.com/aida/AEtjO1V_6HAo4wLzm04ET81mqJZSGh9uzxBvgnP5DV-UevWZ-6ubUgceyjnLmZazLNaLsGQUo4ID3gOqaOteIBZQ-p1_LuMKOLqanT0c4PMpJg3pAXigQbKlOa91qUL8grC7QgfcjE7gxFuP0F-vJfswbuIH16P98pIkwK9zf8ZSz4OZHIm0ZdvMmem0FeKiCzDQIstWXHdlOLFsqUxnQhHQ1rncU1Y5NXT_K2G6L9dJEr7SY45nj_fYaUx3CJU"/><span class="font-headline-sm text-headline-sm text-primary tracking-tight">Relung Jiwa</span></div><nav class="hidden md:flex items-center gap-space-sm" data-active-classes="bg-primary-container text-on-primary-container font-label-lg text-label-lg rounded-lg"><a aria-current="page" class="px-space-md py-space-xs transition-colors bg-primary-container text-on-primary-container font-label-lg text-label-lg rounded-lg" data-path="beranda" href="#">Beranda</a><a class="px-space-md py-space-xs font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors" data-path="tentang" href="#">Tentang</a><a class="px-space-md py-space-xs font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors" data-path="layanan" href="#">Layanan</a><a class="px-space-md py-space-xs font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors" data-path="program" href="#">Program</a><a class="px-space-md py-space-xs font-label-lg text-label-lg text-on-surface-variant hover:text-on-surface transition-colors" data-path="jurnal" href="#">Jurnal</a></nav><div class="flex items-center gap-space-md"><a class="hidden sm:inline-flex items-center justify-center px-space-lg h-12 bg-secondary text-on-secondary font-label-lg text-label-lg rounded-lg shadow-[0_8px_30px_-4px_rgba(41,35,33,0.05)] hover:bg-on-secondary-container hover:text-on-secondary transition-all" data-path="konsultasi" href="#">Mulai Perjalanan</a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-20 bg-background"><div class="flex flex-col w-full">
+<!-- SECTION 1: HERO SECTION -->
+<section class="relative w-full overflow-hidden pt-space-lg md:pt-space-xl pb-space-xl md:pb-24">
+<div class="max-w-[1200px] mx-auto px-margin">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-center">
+<!-- Left Editorial Copy -->
+<div class="lg:col-span-7 flex flex-col items-start pr-0 lg:pr-space-md z-10">
+<div class="inline-flex items-center gap-space-xs px-space-md py-1 bg-surface-container rounded-full mb-space-md">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="font-label-md text-label-md tracking-wider uppercase text-primary">Relung Jiwa • Ruang Refleksi &amp; Pemulihan</span>
+</div>
+<h1 class="font-headline-xl text-headline-xl text-on-surface mb-space-md tracking-tight font-normal">
+            Healing <span class="italic font-light text-primary">From Within</span> — Pulih dari Luka Batin, Temukan Kembali Kedamaian.
+          </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl mb-space-lg leading-relaxed">
+            Sebuah suaka reflektif yang aman untuk mengenali, memahami, dan memeluk luka emosional yang masih terbawa hingga hari ini secara perlahan tanpa penghakiman.
+          </p>
+<div class="flex flex-wrap items-center gap-space-md mb-space-lg">
+<a class="inline-flex items-center justify-center px-space-lg h-12 bg-secondary text-on-secondary font-label-lg text-label-lg rounded-lg shadow-md hover:bg-on-secondary-container transition-all gap-space-xs group" data-path="konsultasi" href="#">
+<span>Mulai Perjalananmu</span>
+<span class="material-symbols-outlined text-[18px] group-hover:translate-x-0.5 transition-transform">arrow_forward</span>
+</a>
+<a class="inline-flex items-center justify-center px-space-lg h-12 bg-surface-container-low text-primary font-label-lg text-label-lg rounded-lg hover:bg-surface-container transition-all" href="#kurikulum">
+              Pelajari Lebih Lanjut
+            </a>
+</div>
+<!-- Grounding Metric Badge -->
+<div class="flex items-center gap-space-md pt-space-xs text-on-surface-variant">
+<div class="flex -space-x-2">
+<div class="w-8 h-8 rounded-full bg-primary-fixed-dim flex items-center justify-center text-primary font-label-md text-[11px] font-bold">RJ</div>
+<div class="w-8 h-8 rounded-full bg-tertiary-fixed flex items-center justify-center text-tertiary font-label-md text-[11px] font-bold">CD</div>
+<div class="w-8 h-8 rounded-full bg-secondary-fixed flex items-center justify-center text-secondary font-label-md text-[11px] font-bold">1k+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+              Telah mendampingi lebih dari <span class="font-semibold text-on-surface">1.200+ jiwa</span> menemukan ruang teduh.
+            </p>
+</div>
+</div>
+<!-- Right Visual with Portrait & Organic Arch Frame -->
+<div class="lg:col-span-5 relative mt-space-lg lg:mt-0 flex justify-center lg:justify-end">
+<!-- Ambient decorative light glow -->
+<div class="absolute -top-12 -right-12 w-80 h-80 rounded-full bg-tertiary-fixed/30 blur-3xl pointer-events-none"></div>
+<div class="absolute -bottom-8 -left-8 w-64 h-64 rounded-full bg-primary-fixed/40 blur-2xl pointer-events-none"></div>
+<div class="relative w-full max-w-[420px]">
+<!-- Elegant Organic Arched Portrait Container -->
+<div class="w-full aspect-[4/5] rounded-t-[140px] rounded-b-2xl overflow-hidden bg-surface-container-high shadow-xl relative">
+<img class="w-full h-full object-cover object-top" data-alt="Warm and compassionate Indonesian female counselor Coach Dehan wearing modern light neutral cream hijab and stylish red tortoiseshell spectacles, gentle comforting smile, soft natural studio light with warm creamy beige background, serene therapeutic ambiance, high-end editorial photography portrait" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAEudNvuHTNz5mSgKupygSfZ6WSQ61l-NuhmitVSagWyQP-GXBRkJf5iY32ecvpYITp0_FdVI1if2bQhdSOcXOq9VDCzJ0JgKimQBwlwYkjjTAMntiXaIZ0vKxzB89KgJiD0lNyW0e1bS0t0VmPumvfkYgTEKyeroTagqfAs14aykAHPuiRxqaW0XGa2CsaCRQTnee6kk7QlU_Eag7adK_dNZUyI5TXbjZkCP7Or7d0hr9gWQ1aN1yA"/>
+</div>
+<!-- Floating reassurance quote badge inspired by screenshot -->
+<div class="absolute -bottom-6 -left-4 md:-left-8 bg-surface-container-lowest/95 backdrop-blur-md p-space-md rounded-xl shadow-lg max-w-[270px] z-20">
+<div class="flex items-start gap-space-xs">
+<span class="material-symbols-outlined text-tertiary text-[20px] mt-0.5">spa</span>
+<div>
+<p class="font-quote-editorial text-[17px] text-primary leading-snug italic font-normal">
+                    “Pelan-pelan, kamu boleh kembali pada dirimu.”
+                  </p>
+<span class="font-label-md text-[11px] text-on-surface-variant uppercase tracking-wider block mt-1">Coach Dehan • Pengasuh Ruang</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 2: RUANG UNTUK MENGENALI (Self-Check & Empathy Hook) -->
+<section class="w-full py-space-xl bg-surface-container-low">
+<div class="max-w-[1200px] mx-auto px-margin">
+<!-- Section Header -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-space-md mb-space-xl">
+<div class="max-w-xl">
+<span class="font-label-md text-label-md uppercase tracking-wider text-secondary font-semibold block mb-space-xs">Ruang untuk Mengenali</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface font-normal leading-tight">
+            Pernahkah merasa... Ada sesuatu yang mengganjal, tapi tidak tahu apa?
+          </h2>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-sm">
+          Kadang, apa yang kita rasakan saat ini tidak sekadar tentang apa yang baru saja terjadi hari ini.
+        </p>
+</div>
+<!-- 4 Reflective Prompt Cards -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<!-- Item 01 -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between h-full group">
+<span class="font-headline-lg text-headline-lg text-secondary/40 group-hover:text-secondary transition-colors font-light">01</span>
+<div class="mt-space-lg">
+<h3 class="font-headline-sm text-[20px] text-on-surface mb-space-xs">Cerita lama yang belum selesai</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Kenangan atau peristiwa masa lampau yang masih sering menimbulkan getaran sesak saat teringat kembali.</p>
+</div>
+</div>
+<!-- Item 02 -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between h-full group">
+<span class="font-headline-lg text-headline-lg text-secondary/40 group-hover:text-secondary transition-colors font-light">02</span>
+<div class="mt-space-lg">
+<h3 class="font-headline-sm text-[20px] text-on-surface mb-space-xs">Perasaan yang pernah dipendam</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Kemarahan, kesedihan, atau kecewa yang terpaksa ditelan demi menjaga kenyamanan orang lain di sekitar.</p>
+</div>
+</div>
+<!-- Item 03 -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between h-full group">
+<span class="font-headline-lg text-headline-lg text-secondary/40 group-hover:text-secondary transition-colors font-light">03</span>
+<div class="mt-space-lg">
+<h3 class="font-headline-sm text-[20px] text-on-surface mb-space-xs">Luka yang pernah diabaikan</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Upaya bersikap ‘baik-baik saja’ yang lama-kelamaan menguras energi vital dan memicu kelelahan batin menahun.</p>
+</div>
+</div>
+<!-- Item 04 -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between h-full group">
+<span class="font-headline-lg text-headline-lg text-secondary/40 group-hover:text-secondary transition-colors font-light">04</span>
+<div class="mt-space-lg">
+<h3 class="font-headline-sm text-[20px] text-on-surface mb-space-xs">Pengalaman yang masih tersimpan</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Pola reaksi otomatis tubuh seperti dada berdebar, pundak tegang, dan kecemasan tanpa pemicu yang nyata.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 3: PEMAHAMAN LEMBUT (Soft Blue Sensory Insight) -->
+<section class="w-full py-space-xl bg-tertiary-fixed/30">
+<div class="max-w-[1200px] mx-auto px-margin">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-center">
+<div class="lg:col-span-8">
+<span class="font-label-md text-label-md uppercase tracking-wider text-tertiary font-semibold block mb-space-xs">Sebuah Pemahaman Lembut</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface font-normal leading-tight mb-space-md">
+            Karena tidak semua luka datang kembali sebagai ingatan.
+          </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+            Pengalaman masa lalu terkadang tetap hidup dalam cara kita merespons hari ini. Ia menjelma menjadi rasa cemas tiba-tiba, kebiasaan menarik diri, atau keraguan berlebih pada kemampuan diri sendiri.
+          </p>
+</div>
+<div class="lg:col-span-4 flex flex-col justify-center gap-space-sm">
+<p class="font-label-lg text-label-lg text-primary font-semibold mb-space-xs">Bentuk kehadiran luka tak kasat mata:</p>
+<div class="flex flex-wrap gap-space-xs">
+<span class="px-space-md py-2 bg-surface-container-lowest text-tertiary rounded-full font-label-md text-label-md shadow-sm">Kecemasan Spontan</span>
+<span class="px-space-md py-2 bg-surface-container-lowest text-tertiary rounded-full font-label-md text-label-md shadow-sm">Pola Relasi Menjauh</span>
+<span class="px-space-md py-2 bg-surface-container-lowest text-tertiary rounded-full font-label-md text-label-md shadow-sm">People Pleasing</span>
+<span class="px-space-md py-2 bg-surface-container-lowest text-tertiary rounded-full font-label-md text-label-md shadow-sm">Ketegangan Fisik</span>
+<span class="px-space-md py-2 bg-surface-container-lowest text-tertiary rounded-full font-label-md text-label-md shadow-sm">Sulit Berkata Tidak</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 4: KURIKULUM PEMBELAJARAN BATIN (Hal-hal yang Akan Kamu Pelajari) -->
+<section class="w-full py-space-xl bg-surface" id="kurikulum">
+<div class="max-w-[1200px] mx-auto px-margin">
+<div class="max-w-2xl mb-space-xl">
+<span class="font-label-md text-label-md uppercase tracking-wider text-secondary font-semibold block mb-space-xs">Dalam Program Ini</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface font-normal">Hal-hal yang akan kamu pelajari &amp; alami</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-space-xs">
+          Rangkaian modul terstruktur yang dirancang dengan ritme menenangkan, membawa pemulihan batin selangkah demi selangkah.
+        </p>
+</div>
+<!-- Syllabus Row List with Subtle Tonal Contrast -->
+<div class="flex flex-col gap-space-sm">
+<!-- 01 -->
+<div class="bg-surface-container-low hover:bg-surface-container transition-colors rounded-xl p-space-lg flex flex-col md:flex-row md:items-center justify-between gap-space-md">
+<div class="flex items-start md:items-center gap-space-md">
+<span class="font-headline-md text-headline-md text-primary font-light w-10">01</span>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Unfinished Business</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Memahami dan mengurai luka masa lalu yang belum terselesaikan di tempat yang aman.</p>
+</div>
+</div>
+<span class="inline-flex items-center gap-1 font-label-md text-label-md text-primary bg-surface-container-lowest px-space-md py-1.5 rounded-full self-start md:self-auto">
+<span class="material-symbols-outlined text-[16px]">psychology</span> Fondasi Pemahaman
+          </span>
+</div>
+<!-- 02 -->
+<div class="bg-surface-container-low hover:bg-surface-container transition-colors rounded-xl p-space-lg flex flex-col md:flex-row md:items-center justify-between gap-space-md">
+<div class="flex items-start md:items-center gap-space-md">
+<span class="font-headline-md text-headline-md text-primary font-light w-10">02</span>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Life Trap</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Mengenali pola emosi berulang, reaksi defensif, dan jeratan kebiasaan yang melelahkan diri.</p>
+</div>
+</div>
+<span class="inline-flex items-center gap-1 font-label-md text-label-md text-primary bg-surface-container-lowest px-space-md py-1.5 rounded-full self-start md:self-auto">
+<span class="material-symbols-outlined text-[16px]">visibility</span> Kesadaran Pola
+          </span>
+</div>
+<!-- 03 -->
+<div class="bg-surface-container-low hover:bg-surface-container transition-colors rounded-xl p-space-lg flex flex-col md:flex-row md:items-center justify-between gap-space-md">
+<div class="flex items-start md:items-center gap-space-md">
+<span class="font-headline-md text-headline-md text-primary font-light w-10">03</span>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Mindful Breathing &amp; Somatic Reset</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Latihan nafas sadar dan pelepasan somatik untuk menenangkan sistem saraf yang terus siaga.</p>
+</div>
+</div>
+<span class="inline-flex items-center gap-1 font-label-md text-label-md text-primary bg-surface-container-lowest px-space-md py-1.5 rounded-full self-start md:self-auto">
+<span class="material-symbols-outlined text-[16px]">air</span> Regulasi Saraf
+          </span>
+</div>
+<!-- 04 -->
+<div class="bg-surface-container-low hover:bg-surface-container transition-colors rounded-xl p-space-lg flex flex-col md:flex-row md:items-center justify-between gap-space-md">
+<div class="flex items-start md:items-center gap-space-md">
+<span class="font-headline-md text-headline-md text-primary font-light w-10">04</span>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Menelusuri Luka Masa Lalu</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Melihat kembali peristiwa lampau dengan kacamata kesadaran baru yang sarat kasih sayang pada diri.</p>
+</div>
+</div>
+<span class="inline-flex items-center gap-1 font-label-md text-label-md text-primary bg-surface-container-lowest px-space-md py-1.5 rounded-full self-start md:self-auto">
+<span class="material-symbols-outlined text-[16px]">favorite</span> Rekonsiliasi Batin
+          </span>
+</div>
+<!-- 05 -->
+<div class="bg-surface-container-low hover:bg-surface-container transition-colors rounded-xl p-space-lg flex flex-col md:flex-row md:items-center justify-between gap-space-md">
+<div class="flex items-start md:items-center gap-space-md">
+<span class="font-headline-md text-headline-md text-primary font-light w-10">05</span>
+<div>
+<h3 class="font-headline-sm text-headline-sm text-on-surface">Emotional Release</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Mempraktikkan teknik katarsis lembut untuk melepaskan beban emosi yang mengendap bertahun-tahun.</p>
+</div>
+</div>
+<span class="inline-flex items-center gap-1 font-label-md text-label-md text-primary bg-surface-container-lowest px-space-md py-1.5 rounded-full self-start md:self-auto">
+<span class="material-symbols-outlined text-[16px]">filter_vintage</span> Pelepasan Utuh
+          </span>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 5: MENGAPA INI PENTING (Warm Espresso/Cocoa Deep Block) -->
+<section class="w-full py-space-xl bg-primary-container text-on-primary-container">
+<div class="max-w-[1200px] mx-auto px-margin">
+<div class="max-w-3xl mb-space-xl">
+<span class="font-label-md text-label-md uppercase tracking-wider text-primary-fixed block mb-space-xs">Mengapa Ini Sangat Berarti</span>
+<h2 class="font-headline-lg text-headline-lg text-surface font-normal leading-tight">
+          Luka yang belum dipahami dapat memengaruhi lebih banyak bagian kehidupan daripada yang kita sadari.
+        </h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Pillar 1 -->
+<div class="bg-primary/40 rounded-xl p-space-lg flex flex-col justify-between">
+<div>
+<div class="w-10 h-10 rounded-full bg-surface-container-lowest/10 flex items-center justify-center text-primary-fixed mb-space-md">
+<span class="material-symbols-outlined text-[20px]">person_heart</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-surface mb-space-xs">Diri Sendiri</h3>
+<p class="font-body-md text-body-md text-primary-fixed-dim leading-relaxed">
+              Mempengaruhi bagaimana kita memandang harga diri, cara kita berbicara pada diri saat gagal, dan tingkat penerimaan terhadap ketidaksempurnaan.
+            </p>
+</div>
+<span class="font-label-md text-label-md text-secondary-fixed mt-space-md block font-medium">Self-Compassion &amp; Regulasi</span>
+</div>
+<!-- Pillar 2 -->
+<div class="bg-primary/40 rounded-xl p-space-lg flex flex-col justify-between">
+<div>
+<div class="w-10 h-10 rounded-full bg-surface-container-lowest/10 flex items-center justify-center text-primary-fixed mb-space-md">
+<span class="material-symbols-outlined text-[20px]">diversity_1</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-surface mb-space-xs">Hubungan Relasi</h3>
+<p class="font-body-md text-body-md text-primary-fixed-dim leading-relaxed">
+              Mewujud dalam cara kita hadir bersama pasangan, keluarga, dan teman—apakah kita menuntut kesempurnaan atau takut membangun kedekatan emosional sejati.
+            </p>
+</div>
+<span class="font-label-md text-label-md text-secondary-fixed mt-space-md block font-medium">Keintiman &amp; Batasan Sehat</span>
+</div>
+<!-- Pillar 3 -->
+<div class="bg-primary/40 rounded-xl p-space-lg flex flex-col justify-between">
+<div>
+<div class="w-10 h-10 rounded-full bg-surface-container-lowest/10 flex items-center justify-center text-primary-fixed mb-space-md">
+<span class="material-symbols-outlined text-[20px]">work_outline</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-surface mb-space-xs">Aktivitas Sehari-hari</h3>
+<p class="font-body-md text-body-md text-primary-fixed-dim leading-relaxed">
+              Berpengaruh pada daya fokus, kerentanan burnout di tempat kerja, serta cara kita membuat keputusan hidup tanpa didorong rasa panik atau takut salah.
+            </p>
+</div>
+<span class="font-label-md text-label-md text-secondary-fixed mt-space-md block font-medium">Ketenangan &amp; Produktivitas Bijak</span>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 6: MENGENAL COACH DEHAN (Credibility & Safe Space) -->
+<section class="w-full py-space-xl bg-surface">
+<div class="max-w-[1200px] mx-auto px-margin">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter items-center">
+<!-- Portrait Left -->
+<div class="lg:col-span-5">
+<div class="relative w-full max-w-[440px] mx-auto">
+<div class="w-full aspect-[4/5] rounded-2xl overflow-hidden bg-surface-container shadow-md">
+<img class="w-full h-full object-cover" data-alt="Editorial portrait of Coach Dehan sitting warmly in an airy sunlit therapy sanctuary studio, holding a warm ceramic cup, genuine empathy, wearing beige earth tone attire, soft natural window illumination, peaceful and trustworthy counselor presence" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDtfC8rUXitQ26StASwBx7xfGtqQOw3lH4jMrrH8h_AXPGTzNsnsec3M_SCdOUuK-yvSXVLgBqwRn9BLwPhwU9thdx4KGhyMRhXEHOwyOyTUx-X2z9K2RImfZGOTrd_Oir6coWkaWd2b6nstYET5BIv_2Pjd4oDfbz8Vc96xRnHvAiLErid-5DGAAvtFtVauHybfIIgO92qxey0u-zJH_cbFeGEUatnq5YgyWpK08tPLsGtdZmr1CfY"/>
+</div>
+<div class="absolute -bottom-4 -right-4 bg-surface-container-lowest p-space-md rounded-xl shadow-lg flex items-center gap-space-xs">
+<span class="material-symbols-outlined text-secondary text-[24px]">verified</span>
+<div>
+<p class="font-label-lg text-label-lg text-on-surface font-bold leading-none">10+ Tahun</p>
+<p class="font-body-sm text-[12px] text-on-surface-variant">Mendampingi Proses Batin</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Note Right -->
+<div class="lg:col-span-7 flex flex-col items-start pl-0 lg:pl-space-md mt-space-lg lg:mt-0">
+<span class="font-label-md text-label-md uppercase tracking-wider text-secondary font-semibold block mb-space-xs">Tentang Coach Dehan</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface font-normal mb-space-md leading-tight">
+            Pendampingan yang berangkat dari rasa aman.
+          </h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-space-md leading-relaxed">
+            Relung Jiwa membuka ruang untuk melihat pengalaman emosional dengan lebih sadar, hangat, dan tanpa terburu-buru. Setiap proses selalu dimulai dari sebuah percakapan terbuka yang menghormati ritme pribadi Anda.
+          </p>
+<div class="bg-surface-container-low p-space-md rounded-xl w-full mb-space-lg">
+<div class="flex items-start gap-space-sm">
+<span class="material-symbols-outlined text-primary text-[22px] mt-0.5">psychology_alt</span>
+<div>
+<p class="font-label-lg text-label-lg text-on-surface font-semibold">Praktisi Trauma Healing &amp; Emotional Wellness</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Berpengalaman memfasilitasi ratusan lingkaran refleksi kelompok dan sesi konseling mendalam berbasis neurosains kasih sayang.</p>
+</div>
+</div>
+</div>
+<a class="inline-flex items-center gap-space-xs text-primary font-label-lg text-label-lg group hover:text-secondary transition-colors" data-path="tentang" href="#">
+<span>Kenali Pendekatan Relung Jiwa Lebih Dekat</span>
+<span class="material-symbols-outlined text-[18px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 7: MANFAAT NYATA (Apa yang Akan Kamu Dapatkan?) -->
+<section class="w-full py-space-xl bg-surface-container-low">
+<div class="max-w-[1200px] mx-auto px-margin">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<div class="lg:col-span-5">
+<span class="font-label-md text-label-md uppercase tracking-wider text-secondary font-semibold block mb-space-xs">Membawa Pulang Sesuatu yang Berarti</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface font-normal mb-space-sm leading-tight">
+            Apa yang akan kamu rasakan setelah perjalanan ini?
+          </h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-space-lg">
+            Pemulihan bukan berarti melupakan segalanya, melainkan memiliki kapasitas batin baru untuk merangkul diri apa adanya.
+          </p>
+<div class="p-space-md bg-surface-container-lowest rounded-xl shadow-sm">
+<p class="font-quote-editorial text-[18px] text-primary italic leading-relaxed">
+              “Saat kita berhenti berperang dengan perasaan sendiri, di situlah kedamaian mulai bertunas.”
+            </p>
+</div>
+</div>
+<div class="lg:col-span-7 flex flex-col justify-center space-y-space-sm mt-space-md lg:mt-0">
+<div class="flex items-start gap-space-sm bg-surface-container-lowest p-space-md rounded-lg shadow-sm">
+<div class="w-6 h-6 rounded-full bg-tertiary-fixed flex items-center justify-center text-tertiary shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[16px] font-bold">check</span>
+</div>
+<div>
+<p class="font-label-lg text-label-lg text-on-surface font-semibold">Lebih memahami akar emosi dan pemicunya</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Mengetahui dari mana asal kecemasan atau kesedihan tanpa perlu lagi merasa bersalah atas apa yang dirasakan.</p>
+</div>
+</div>
+<div class="flex items-start gap-space-sm bg-surface-container-lowest p-space-md rounded-lg shadow-sm">
+<div class="w-6 h-6 rounded-full bg-tertiary-fixed flex items-center justify-center text-tertiary shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[16px] font-bold">check</span>
+</div>
+<div>
+<p class="font-label-lg text-label-lg text-on-surface font-semibold">Menyadari pola pertahanan diri dan reaksi otomatis</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Memutus rantai kebiasaan memendam atau meledak-ledak saat menghadapi gesekan dalam hubungan interpersonal.</p>
+</div>
+</div>
+<div class="flex items-start gap-space-sm bg-surface-container-lowest p-space-md rounded-lg shadow-sm">
+<div class="w-6 h-6 rounded-full bg-tertiary-fixed flex items-center justify-center text-tertiary shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[16px] font-bold">check</span>
+</div>
+<div>
+<p class="font-label-lg text-label-lg text-on-surface font-semibold">Memiliki cara lebih ramah untuk mengelola emosi sulit</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Alat bantu praktis yang terbukti ilmiah untuk meregulasi diri di tengah situasi penuh tekanan pekerjaan atau keluarga.</p>
+</div>
+</div>
+<div class="flex items-start gap-space-sm bg-surface-container-lowest p-space-md rounded-lg shadow-sm">
+<div class="w-6 h-6 rounded-full bg-tertiary-fixed flex items-center justify-center text-tertiary shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[16px] font-bold">check</span>
+</div>
+<div>
+<p class="font-label-lg text-label-lg text-on-surface font-semibold">Panduan latihan sederhana yang dapat dilakukan mandiri</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Jurnal refleksi terpandu dan audio pernapasan sadar yang bisa diakses kapan pun Anda membutuhkan sauh ketenangan.</p>
+</div>
+</div>
+<div class="flex items-start gap-space-sm bg-surface-container-lowest p-space-md rounded-lg shadow-sm">
+<div class="w-6 h-6 rounded-full bg-tertiary-fixed flex items-center justify-center text-tertiary shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[16px] font-bold">check</span>
+</div>
+<div>
+<p class="font-label-lg text-label-lg text-on-surface font-semibold">Melangkah dengan perasaan lebih ringan dan utuh</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Merasa kembali terkoneksi dengan tubuh, menghargai perjalanan hidup, dan menyongsong hari esok dengan harapan jernih.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 8: SUARA SAHABAT RELUNG (Editorial Testimonials) -->
+<section class="w-full py-space-xl bg-surface">
+<div class="max-w-[1200px] mx-auto px-margin">
+<div class="text-center max-w-xl mx-auto mb-space-xl">
+<span class="font-label-md text-label-md uppercase tracking-wider text-secondary font-semibold block mb-space-xs">Suara dari Ruang Ini</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface font-normal">Kesan yang dibawa pulang para sahabat</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<!-- Testimonial 1 -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+<div>
+<span class="font-headline-lg text-headline-lg text-secondary/30 block leading-none mb-space-xs">“</span>
+<p class="font-body-md text-body-md text-on-surface leading-relaxed mb-space-md">
+              Saya jadi punya ruang untuk memahami apa yang selama ini saya rasakan, tanpa terburu-buru menghakimi diri sendiri. Ternyata tidak apa-apa untuk merasa lelah.
+            </p>
+</div>
+<div class="pt-space-sm">
+<p class="font-label-lg text-label-lg text-primary font-semibold">Raras W.</p>
+<p class="font-body-sm text-[13px] text-on-surface-variant">Peserta Program Introspeksi Mandiri</p>
+</div>
+</div>
+<!-- Testimonial 2 -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+<div>
+<span class="font-headline-lg text-headline-lg text-secondary/30 block leading-none mb-space-xs">“</span>
+<p class="font-body-md text-body-md text-on-surface leading-relaxed mb-space-md">
+              Bagian yang paling berkesan adalah ketika saya belajar melihat pola lama dengan cara yang jauh lebih lembut. Pendampingan Coach Dehan terasa begitu aman dan meneduhkan.
+            </p>
+</div>
+<div class="pt-space-sm">
+<p class="font-label-lg text-label-lg text-primary font-semibold">Dimas A.</p>
+<p class="font-body-sm text-[13px] text-on-surface-variant">Peserta Webinar Lingkar Hening</p>
+</div>
+</div>
+<!-- Testimonial 3 -->
+<div class="bg-surface-container-lowest p-space-lg rounded-xl shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between">
+<div>
+<span class="font-headline-lg text-headline-lg text-secondary/30 block leading-none mb-space-xs">“</span>
+<p class="font-body-md text-body-md text-on-surface leading-relaxed mb-space-md">
+              Latihan sederhana yang dibagikan terasa mudah dibawa ke keseharian saya yang padat. Sekarang, saat cemas datang, saya tahu cara untuk kembali tenang.
+            </p>
+</div>
+<div class="pt-space-sm">
+<p class="font-label-lg text-label-lg text-primary font-semibold">Siti M.</p>
+<p class="font-body-sm text-[13px] text-on-surface-variant">Konsultasi Terpandu Relung Jiwa</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- SECTION 9: WARM INVITATION / CLOSING BANNER -->
+<section class="w-full py-space-xl bg-surface-container-high relative overflow-hidden">
+<!-- Ambient organic gradient wash -->
+<div class="absolute inset-0 bg-gradient-to-r from-primary-container/90 via-primary-container to-primary-container/95"></div>
+<div class="max-w-[1000px] mx-auto px-margin relative z-10 text-center py-space-md">
+<span class="font-label-md text-label-md uppercase tracking-wider text-primary-fixed block mb-space-xs">Pemberhentian yang Menenangkan</span>
+<h2 class="font-headline-xl text-headline-xl text-surface font-normal mb-space-sm max-w-2xl mx-auto leading-tight">
+        Kamu tidak harus menyelesaikan semuanya hari ini.
+      </h2>
+<p class="font-body-lg text-body-lg text-primary-fixed-dim max-w-xl mx-auto mb-space-lg">
+        Tetapi kamu bisa mulai mengenali dirimu hari ini. Bersama kami, temukan kembali ruang tenang di dalam dada yang mungkin sudah lama terabaikan.
+      </p>
+<div class="flex flex-col sm:flex-row items-center justify-center gap-space-md">
+<a class="w-full sm:w-auto inline-flex items-center justify-center px-space-lg h-12 bg-secondary text-on-secondary font-label-lg text-label-lg rounded-lg shadow-md hover:bg-on-secondary-container transition-all gap-space-xs" data-path="konsultasi" href="#">
+<span>Konsultasi Penjajakan (15 Menit)</span>
+<span class="material-symbols-outlined text-[18px]">calendar_today</span>
+</a>
+<a class="w-full sm:w-auto inline-flex items-center justify-center px-space-lg h-12 bg-surface-container-lowest/15 hover:bg-surface-container-lowest/25 text-surface font-label-lg text-label-lg rounded-lg transition-all" data-path="program" href="#">
+          Lihat Jadwal Program Terdekat
+        </a>
+</div>
+</div>
+</section>
+</div></main><footer class="w-full bg-inverse-surface text-inverse-on-surface pt-space-xl pb-space-xl mt-space-xl"><div class="max-w-[1200px] mx-auto px-margin flex flex-col gap-space-xl"><div class="bg-surface-container-highest/10 rounded-xl p-space-lg flex flex-col md:flex-row md:items-center justify-between gap-space-md shadow-[0_8px_30px_-4px_rgba(41,35,33,0.05)]"><div class="flex items-start md:items-center gap-space-sm"><span class="material-symbols-outlined text-secondary-container text-[24px]">support_agent</span><div><p class="font-label-lg text-label-lg text-inverse-on-surface font-semibold">Dukungan Krisis &amp; Darurat Emosional</p><p class="font-body-sm text-body-sm text-surface-variant">Jika Anda atau kerabat membutuhkan bantuan segera, hubungi Layanan Sejiwa Kemenkes.</p></div></div><div class="flex items-center gap-space-sm"><span class="font-headline-sm text-headline-sm text-secondary-fixed">Hotline: 119 ext 8</span></div></div><div class="grid grid-cols-1 md:grid-cols-4 gap-gutter"><div class="space-y-space-sm md:col-span-1"><div class="flex items-center gap-space-xs"><span class="font-headline-sm text-headline-sm text-primary-fixed-dim">Relung Jiwa</span></div><p class="font-body-sm text-body-sm text-surface-dim leading-relaxed">Suaka hening untuk mengurai beban pikiran, menumbuhkan kesadaran diri, dan merawat batin dengan kelembutan.</p></div><div><h4 class="font-label-lg text-label-lg text-inverse-on-surface mb-space-sm uppercase tracking-wider">Navigasi</h4><ul class="space-y-space-xs font-body-sm text-body-sm text-surface-dim"><li><a class="hover:text-inverse-on-surface transition-colors" data-path="beranda" href="#">Beranda</a></li><li><a class="hover:text-inverse-on-surface transition-colors" data-path="tentang" href="#">Tentang Kami</a></li><li><a class="hover:text-inverse-on-surface transition-colors" data-path="layanan" href="#">Layanan Terapi &amp; Konseling</a></li><li><a class="hover:text-inverse-on-surface transition-colors" data-path="program" href="#">Program Mindfulness</a></li><li><a class="hover:text-inverse-on-surface transition-colors" data-path="jurnal" href="#">Jurnal Refleksi</a></li></ul></div><div><h4 class="font-label-lg text-label-lg text-inverse-on-surface mb-space-sm uppercase tracking-wider">Ruang Tenang</h4><ul class="space-y-space-xs font-body-sm text-body-sm text-surface-dim"><li><a class="hover:text-inverse-on-surface transition-colors" data-path="konsultasi" href="#">Jadwalkan Sesi</a></li><li><a class="hover:text-inverse-on-surface transition-colors" data-path="program" href="#">Meditasi Terpandu</a></li><li><a class="hover:text-inverse-on-surface transition-colors" data-path="jurnal" href="#">Kisah Komunitas</a></li></ul></div><div><h4 class="font-label-lg text-label-lg text-inverse-on-surface mb-space-sm uppercase tracking-wider">Etika &amp; Privasi</h4><p class="font-body-sm text-body-sm text-surface-dim mb-space-sm">Setiap percakapan dan catatan jurnal Anda terjaga dalam kerahasiaan ruang aman kami.</p><div class="flex items-center gap-space-xs text-surface-variant"><span class="material-symbols-outlined text-[20px]">verified_user</span><span class="font-label-md text-label-md">Privasi Terenkripsi &amp; Terlindungi</span></div></div></div><div class="pt-space-lg flex flex-col md:flex-row items-center justify-between gap-space-sm text-surface-dim font-body-sm text-body-sm"><p>© 2025 Relung Jiwa. Ruang teduh untuk perjalanan batin Anda.</p><div class="flex gap-space-md"><span class="font-label-md text-label-md">Bukan Pengganti Penanganan Medis Klinis Akut</span></div></div></div></footer></body></html>
