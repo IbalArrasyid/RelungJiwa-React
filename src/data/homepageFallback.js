@@ -6,7 +6,7 @@ export const approvedHomepageFallback = {
     description: 'Sebuah ruang reflektif untuk mengenali, memahami, dan mulai melepaskan luka emosional yang masih terbawa hingga hari ini.',
     primaryCTA: { label: 'Mulai Perjalananmu', type: 'external', url: 'https://wa.me/6281351780173', openInNewTab: true },
     image: null,
-    imageAlt: 'Coach Dehan dari Relung Jiwa',
+    imageAlt: 'Coach Dehan',
   },
   recognition: {
     eyebrow: 'Ruang untuk mengenali',

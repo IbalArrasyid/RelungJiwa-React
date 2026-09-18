@@ -7,7 +7,7 @@ import { usePrograms } from '../hooks/usePrograms'
 const programTypeLabels = { webinar: 'Webinar', workshop: 'Workshop', class: 'Kelas', program: 'Program' }
 const programStatusLabels = { open: 'Pendaftaran dibuka', upcoming: 'Pendaftaran akan dibuka', closed: 'Pendaftaran ditutup', completed: 'Program telah selesai' }
 const filters = [{ value: 'all', label: 'Semua' }, { value: 'open', label: 'Pendaftaran dibuka' }, { value: 'upcoming', label: 'Akan datang' }, { value: 'closed', label: 'Selesai / ditutup' }]
-const fallbackImages = ['/assets/img/upload/Folder%20Upload%20All%20Mentor/Foto%20mentor/DSC00546.jpeg', '/assets/img/upload/Folder%20Upload%20All%20Mentor/Foto%20mentor/DSC00497.jpeg']
+const fallbackImages = ['/assets/editorial/garden-sanctuary.jpg', '/assets/editorial/studio-reflective.jpg']
 const statusStyles = { open: 'bg-coral text-white', upcoming: 'bg-soft-blue text-cocoa', closed: 'bg-surface-container text-cocoa', completed: 'bg-surface-container text-cocoa' }
 
 function formatProgramDate(value) {

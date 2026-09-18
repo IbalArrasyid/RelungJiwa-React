@@ -1,7 +1,7 @@
 import { useMemo, useState } from 'react'
 import { ArrowRight, BookOpen, CheckCircle2, Headphones, LockKeyhole, Mail, Play, Search, X } from 'lucide-react'
 
-const categories = ['Semua Tulisan', 'Regulasi Emosi & Somatik', 'Memulihkan Luka Masa Lalu', 'Duka & Penerimaan', 'Jurnal Mandiri & Latihan', 'Surat dari Dehan']
+const categories = ['Semua Tulisan', 'Regulasi Emosi & Somatik', 'Memulihkan Luka Masa Lalu', 'Duka & Penerimaan', 'Jurnal Mandiri & Latihan', 'Surat dari Coach Dehan']
 
 const articles = [
   {
@@ -10,7 +10,7 @@ const articles = [
     readTime: '5 menit',
     title: 'Seni Berkata “Cukup”: Menegakkan Batas Diri Tanpa Dibebani Rasa Bersalah',
     summary: 'Batas diri bukan tentang menjauhkan orang lain, melainkan pagar perlindungan agar kebutuhan kita tidak terus terabaikan.',
-    image: '/assets/img/blog7-1.jpg',
+    image: '/assets/journal/boundaries.jpg',
     author: 'Praktik Harian',
   },
   {
@@ -19,7 +19,7 @@ const articles = [
     readTime: '7 menit',
     title: 'Mengapa Memeluk Luka Masa Lalu Terasa Jauh Lebih Menakutkan dari Membayangkannya?',
     summary: 'Membuka rasa sakit sering terasa seperti keterbukaan yang rentan. Kita menelusurinya perlahan, dengan izin dari diri sendiri.',
-    image: '/assets/img/curved-images/curved11.jpg',
+    image: '/assets/journal/library-nook.jpg',
     author: 'Audio Tersedia',
   },
   {
@@ -28,7 +28,7 @@ const articles = [
     readTime: '6 menit',
     title: 'Grief Circle: Mengakui Bahwa Setiap Kehilangan Memiliki Irama Berduka yang Berbeda',
     summary: 'Masyarakat mengajarkan kita untuk cepat pulih. Padahal, duka punya ritmenya sendiri dan tak perlu dibandingkan.',
-    image: '/assets/img/blog7-3.jpg',
+    image: '/assets/journal/grief-acceptance.jpg',
     author: 'Praktik Hening',
   },
   {
@@ -37,16 +37,16 @@ const articles = [
     readTime: '9 menit',
     title: 'Napas yang Tersangkut di Dada: Bagaimana Stres Menetap di Sistem Saraf Kita',
     summary: 'Sebelum pikiran menyadari kecemasan, tubuh sering lebih dahulu memberi isyarat melalui napas yang memendek dan tegang.',
-    image: '/assets/img/curved-images/curved8.jpg',
+    image: '/assets/journal/breath-corner.jpg',
     author: 'Latihan Pernapasan',
   },
   {
     id: 'penolong',
-    category: 'Surat dari Dehan',
+    category: 'Surat dari Coach Dehan',
     readTime: '4 menit',
     title: 'Surat Terbuka untuk Jiwa yang Terbiasa Menjadi Penolong bagi Semua Orang Kecuali Dirinya Sendiri',
     summary: 'Sebuah pesan hangat untukmu yang selalu ada bagi orang lain, tetapi lupa bertanya apa yang sedang kamu butuhkan.',
-    image: '/assets/img/curved-images/curved6.jpg',
+    image: '/assets/journal/letter-reflection.jpg',
     author: 'Renungan Hati',
   },
   {
@@ -55,7 +55,7 @@ const articles = [
     readTime: '5 menit',
     title: 'Ritual Pagi 10 Menit: Memulai Hari Bukan dengan Rasa Dikejar, Melainkan Kehadiran Utuh',
     summary: 'Tiga pertanyaan sederhana untuk dibawa ke pagi hari, sebelum menyentuh notifikasi dan memulai pekerjaan.',
-    image: '/assets/img/blog7-2.jpg',
+    image: '/assets/journal/morning-ritual.jpg',
     author: 'Template Refleksi',
   },
 ]
@@ -66,8 +66,8 @@ const featuredArticle = {
   readTime: '8 menit',
   title: 'Ketika Tubuh Berteriak Lelah, Namun Pikiran Menolak Berhenti: Memahami Siklus Kelelahan Emosional Kronis',
   summary: 'Kita sering menganggap istirahat adalah kemewahan yang harus dicari setelah semua pekerjaan selesai. Nyatanya, rasa lelah batin tidak pernah bisa dibayar dengan satu hari tidur panjang jika sistem saraf terus berada dalam alarm siaga.',
-  image: '/assets/img/curved-images/curved5.jpg',
-  author: 'Dehan Mahardika, M.Psi.',
+  image: '/assets/journal/featured-journal.jpg',
+  author: 'Coach Dehan',
 }
 
 function matchesArticle(article, query, category) {

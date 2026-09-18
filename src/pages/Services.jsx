@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom'
 import { useServices } from '../hooks/useServices'
 
 const fallbackImages = [
-  '/assets/img/upload/Folder%20Upload%20All%20Mentor/Foto%20mentor/DSC00494.jpeg',
-  '/assets/img/upload/Folder%20Upload%20All%20Mentor/Foto%20mentor/DSC00532.jpeg',
-  '/assets/img/upload/Folder%20Upload%20All%20Mentor/Foto%20mentor/DSC00490.jpeg',
-  '/assets/img/upload/Folder%20Upload%20All%20Mentor/Foto%20mentor/DSC00546.jpeg',
+  '/assets/editorial/studio-reflective.jpg',
+  '/assets/editorial/journal-ritual.jpg',
+  '/assets/editorial/guided-circle.jpg',
+  '/assets/editorial/garden-sanctuary.jpg',
 ]
 
 const serviceReference = [
