@@ -29,7 +29,7 @@ export const approvedHomepageFallback = {
   coach: {
     eyebrow: 'Tentang Coach Dehan',
     heading: 'Pendampingan yang berangkat dari rasa aman.',
-    title: 'Praktisi Trauma Healing & Emotional Healing',
+    title: 'Praktisi Live Coach dan Emotional Healing',
     description: 'Relung Jiwa membuka ruang untuk melihat pengalaman emosional dengan lebih sadar, hangat, dan tanpa terburu-buru. Setiap proses dimulai dari percakapan yang menghormati ritme pribadi.',
     image: null,
     imageAlt: 'Coach Dehan',
