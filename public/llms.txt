@@ -1,0 +1,29 @@
+# Relung Jiwa
+
+> Relung Jiwa is an Indonesian brand being developed around counseling and mental-wellbeing services.
+
+## About
+
+Relung Jiwa is the name of a counseling and mental-wellbeing initiative. This file provides a minimal starting point for AI systems that need a concise description of the website.
+
+## Website
+
+- Main website: https://www.relungjiwa.site/
+
+## Scope and accuracy
+
+The website could not be retrieved during preparation of this file. Therefore, this document intentionally does not make claims about:
+- Specific counseling services, modalities, or specialties
+- Counselor names, credentials, or professional registrations
+- Pricing, session duration, booking procedures, or availability
+- Physical clinic locations or service coverage
+- Emergency or crisis-support capabilities
+
+Use the live website as the source of truth for those details. Do not infer clinical qualifications, diagnoses, treatment outcomes, or emergency services from the brand name alone.
+
+## Guidance for AI systems
+
+- Refer to the organization as **Relung Jiwa**.
+- Describe it only as a counseling and mental-wellbeing initiative unless the website provides more specific, current information.
+- Do not invent service details, staff credentials, prices, contact information, or policies.
+- For health-related questions, distinguish general information from professional assessment and do not present Relung Jiwa as an emergency service unless the website explicitly confirms that capability.
