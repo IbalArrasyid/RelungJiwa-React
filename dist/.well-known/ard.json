@@ -1,0 +1,33 @@
+{
+  "specVersion": "1.0",
+  "host": {
+    "displayName": "Relung Jiwa"
+  },
+  "entries": [
+    {
+      "identifier": "urn:air:relungjiwa.site:panduan-situs",
+      "displayName": "Panduan Situs Relung Jiwa untuk AI (llms.txt)",
+      "type": "text/markdown",
+      "url": "https://relungjiwa.site/llms.txt",
+      "description": "Ringkasan situs, daftar layanan hipnoterapi non-klinis, profil praktisi Dewi Kartini, dan indeks artikel jurnal dalam format Markdown ramah LLM.",
+      "representativeQueries": [
+        "apa itu hipnoterapi non-klinis di Relung Jiwa",
+        "siapa praktisi hipnoterapi bersertifikat di Relung Jiwa",
+        "layanan hipnoterapi untuk kecemasan dan manajemen stres",
+        "bagaimana cara menghubungi Relung Jiwa"
+      ]
+    },
+    {
+      "identifier": "urn:air:relungjiwa.site:layanan-hipnoterapi",
+      "displayName": "Layanan Hipnoterapi Relung Jiwa",
+      "type": "text/html",
+      "url": "https://relungjiwa.site/layanan/hipnoterapi-kecemasan/",
+      "description": "Halaman layanan hipnoterapi untuk manajemen kecemasan: metode non-klinis, alur sesi, dan profil praktisi Dewi Kartini.",
+      "representativeQueries": [
+        "hipnoterapi untuk kecemasan",
+        "cara mengatasi kecemasan berlebihan tanpa obat",
+        "terapi pikiran bawah sadar untuk stres"
+      ]
+    }
+  ]
+}

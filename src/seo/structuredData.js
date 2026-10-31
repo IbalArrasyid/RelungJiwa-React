@@ -5,6 +5,10 @@ const SITE_URL = 'https://relungjiwa.site'
 const SITE_NAME = 'Relung Jiwa'
 const ORG_ID = `${SITE_URL}/#organization`
 
+// TODO: Isi dengan @id Coach Dehan jika profil publik tersedia, atau hapus baris ini
+// jika Coach Dehan tidak lagi dipertahankan dalam schema.
+const COACH_DEHAN_SCHEMA_ID = null // TODO: 'https://relungjiwa.site/tentang/#coach-dehan'
+
 export const contactFaqItems = [
   {
     question: 'Berapa lama pesan saya akan dibalas?',
@@ -39,8 +43,11 @@ const siteGraph = [
       postalCode: '12810',
       addressCountry: 'ID',
     },
-    employee: { '@id': PRACTITIONER_PERSON_SCHEMA['@id'] },
-    knowsAbout: 'Pendampingan komplementer dan non-klinis',
+    founder: { '@id': PRACTITIONER_PERSON_SCHEMA['@id'] },
+    // Coach Dehan diposisikan sebagai praktisi pendukung (employee), bukan founder.
+    // Hapus baris employee jika Coach Dehan tidak lagi dipertahankan di schema.
+    ...(COACH_DEHAN_SCHEMA_ID != null && { employee: { '@id': COACH_DEHAN_SCHEMA_ID } }),
+    knowsAbout: 'Hipnoterapi non-klinis, pendampingan komplementer, manajemen kecemasan, manajemen stres',
   },
   {
     '@type': 'WebSite',

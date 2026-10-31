@@ -1,6 +1,5 @@
 User-agent: *
 Allow: /
 
-Sitemap: /sitemap.xml
-
-
+Sitemap: https://relungjiwa.site/sitemap.xml
+Agentmap: https://relungjiwa.site/.well-known/ard.json

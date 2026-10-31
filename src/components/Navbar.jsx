@@ -31,7 +31,22 @@ export default function Navbar() {
     <header className="w-full px-4 pt-3 sm:px-6">
       <div className={`mx-auto flex h-16 w-full max-w-[1200px] items-center justify-between gap-3 rounded-xl border px-4 transition sm:h-20 sm:gap-4 sm:px-6 ${open ? 'border-cocoa/15 bg-cream/95 shadow-[0_8px_30px_-4px_rgba(41,35,33,.08)] backdrop-blur-xl' : 'border-cocoa/10 bg-cream/80 backdrop-blur-xl'}`}>
         <Link to="/" className="shrink-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-cocoa" aria-label={`${settings.siteName}, beranda`}>
-          <img src="/assets/brand/relung-jiwa-landscape.png" alt={settings.siteName} width="186" height="48" className="h-8 w-auto object-contain sm:h-9" />
+          <picture>
+            <source
+              type="image/webp"
+              srcSet="/assets/brand/relung-jiwa-landscape-186w.webp 186w, /assets/brand/relung-jiwa-landscape-372w.webp 372w"
+              sizes="186px"
+            />
+            <img
+              src="/assets/brand/relung-jiwa-landscape-186w.png"
+              alt={settings.siteName}
+              width="186"
+              height="48"
+              className="h-8 w-auto object-contain sm:h-9"
+              loading="eager"
+              decoding="async"
+            />
+          </picture>
         </Link>
         <nav className="hidden items-center gap-1 lg:flex" aria-label="Navigasi utama">
           {header.navigationItems.map((item) => <NavigationItem key={item.id} item={item} />)}
