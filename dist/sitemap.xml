@@ -1,11 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>/</loc></url>
-  <url><loc>/tentang</loc></url>
-  <url><loc>/layanan</loc></url>
-  <url><loc>/paket</loc></url>
-  <url><loc>/faq</loc></url>
-  <url><loc>/kontak</loc></url>
+  <url>
+    <loc>https://relungjiwa.site/</loc>
+    <lastmod>2026-10-30</lastmod>
+  </url>
+  <url>
+    <loc>https://relungjiwa.site/tentang</loc>
+    <lastmod>2026-10-30</lastmod>
+  </url>
+  <url>
+    <loc>https://relungjiwa.site/layanan</loc>
+    <lastmod>2026-10-30</lastmod>
+  </url>
+  <url>
+    <loc>https://relungjiwa.site/paket</loc>
+    <lastmod>2026-10-30</lastmod>
+  </url>
+  <url>
+    <loc>https://relungjiwa.site/faq</loc>
+    <lastmod>2026-10-30</lastmod>
+  </url>
+  <url>
+    <loc>https://relungjiwa.site/kontak</loc>
+    <lastmod>2026-10-30</lastmod>
+  </url>
+  <url>
+    <loc>https://relungjiwa.site/about</loc>
+    <lastmod>2026-10-30</lastmod>
+  </url>
 </urlset>
-
-

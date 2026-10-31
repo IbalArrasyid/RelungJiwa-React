@@ -13,6 +13,9 @@ import FAQ from './pages/FAQ'
 import Journal from './pages/Journal'
 import PagesIndex from './pages/PagesIndex'
 import StaticPage from './pages/StaticPage'
+import ServiceLanding from './pages/ServiceLanding'
+import TentangKami from './pages/TentangKami'
+import JournalArticle from './pages/JournalArticle'
 
 const router = createBrowserRouter([
   {
@@ -22,10 +25,13 @@ const router = createBrowserRouter([
       { index: true, element: <Home /> },
       { path: 'tentang', element: <About /> },
       { path: 'layanan', element: <Services /> },
+      { path: 'layanan/:slug', element: <ServiceLanding /> },
       { path: 'paket', element: <Packages /> },
       { path: 'program', element: <Programs /> },
       { path: 'faq', element: <FAQ /> },
       { path: 'jurnal', element: <Journal /> },
+      { path: 'jurnal/:slug', element: <JournalArticle /> },
+      { path: 'profil-praktisi', element: <TentangKami /> },
       { path: 'kontak', element: <Contact /> },
       { path: 'pages', element: <PagesIndex /> },
       { path: 'pages/:slug', element: <StaticPage /> },
